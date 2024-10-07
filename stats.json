@@ -1,0 +1,2261 @@
+{
+    "organization_profile": {
+        "login": "ISIS3510Team35",
+        "name": null,
+        "description": null,
+        "blog": null,
+        "location": null,
+        "email": null,
+        "avatar_url": "https://avatars.githubusercontent.com/u/145634301?v=4",
+        "html_url": "https://github.com/ISIS3510Team35",
+        "public_repos": 3,
+        "public_members": "https://api.github.com/orgs/ISIS3510Team35/public_members{/member}"
+    },
+    "organization_members": [
+        {
+            "login": "danielfgmb",
+            "id": 49533662,
+            "avatar_url": "https://avatars.githubusercontent.com/u/49533662?v=4"
+        },
+        {
+            "login": "dmartinezc1",
+            "id": 60227192,
+            "avatar_url": "https://avatars.githubusercontent.com/u/60227192?v=4"
+        },
+        {
+            "login": "HIPERMAST",
+            "id": 78066378,
+            "avatar_url": "https://avatars.githubusercontent.com/u/78066378?v=4"
+        },
+        {
+            "login": "JP-514",
+            "id": 63476791,
+            "avatar_url": "https://avatars.githubusercontent.com/u/63476791?v=4"
+        },
+        {
+            "login": "Mecon0710",
+            "id": 69613310,
+            "avatar_url": "https://avatars.githubusercontent.com/u/69613310?v=4"
+        },
+        {
+            "login": "SBobi",
+            "id": 60121052,
+            "avatar_url": "https://avatars.githubusercontent.com/u/60121052?v=4"
+        }
+    ],
+    "organization_repos": [
+        {
+            "name": "ISIS3510_202310_Team",
+            "full_name": "ISIS3510Team35/ISIS3510_202310_Team",
+            "private": false,
+            "description": null,
+            "html_url": "https://github.com/ISIS3510Team35/ISIS3510_202310_Team",
+            "language": null,
+            "created_at": "2023-09-21T03:30:10Z",
+            "updated_at": "2023-09-21T03:30:11Z",
+            "pushed_at": "2023-09-22T21:36:24Z",
+            "size": 52765,
+            "stargazers_count": 0,
+            "watchers_count": 0,
+            "forks_count": 0,
+            "open_issues_count": 0,
+            "license": null,
+            "default_branch": "main",
+            "topics": []
+        },
+        {
+            "name": "KotlinTeam",
+            "full_name": "ISIS3510Team35/KotlinTeam",
+            "private": false,
+            "description": null,
+            "html_url": "https://github.com/ISIS3510Team35/KotlinTeam",
+            "language": "HTML",
+            "created_at": "2023-09-21T03:42:03Z",
+            "updated_at": "2023-12-05T05:25:55Z",
+            "pushed_at": "2023-12-19T21:38:11Z",
+            "size": 5594,
+            "stargazers_count": 0,
+            "watchers_count": 0,
+            "forks_count": 0,
+            "open_issues_count": 0,
+            "license": null,
+            "default_branch": "main",
+            "topics": []
+        },
+        {
+            "name": "FlutterTeam",
+            "full_name": "ISIS3510Team35/FlutterTeam",
+            "private": false,
+            "description": null,
+            "html_url": "https://github.com/ISIS3510Team35/FlutterTeam",
+            "language": "Makefile",
+            "created_at": "2023-09-21T03:43:37Z",
+            "updated_at": "2023-09-22T03:17:51Z",
+            "pushed_at": "2023-12-05T03:22:29Z",
+            "size": 1543842,
+            "stargazers_count": 0,
+            "watchers_count": 0,
+            "forks_count": 0,
+            "open_issues_count": 1,
+            "license": null,
+            "default_branch": "main",
+            "topics": []
+        }
+    ],
+    "branches": [
+        "DataFix2",
+        "Develop",
+        "Develop2",
+        "Develop3",
+        "DishView",
+        "FilterView",
+        "HomeView2",
+        "LoginView",
+        "Model",
+        "ProductOfferView",
+        "RestaurantView",
+        "RestaurantView2",
+        "Sprint4",
+        "main"
+    ],
+    "commits": [
+        {
+            "sha": "d9586a63e0a59d6d6568413f3a3fcdb248a4fb0f",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-12-05T05:25:49Z",
+            "message": "Merge pull request #44 from ISIS3510Team35/Develop2\n\nAdd Views and Features"
+        },
+        {
+            "sha": "fcd775f33bf5eb8653a6b323498d0d737856b668",
+            "author": "danielfgmb",
+            "date": "2023-12-05T04:51:31Z",
+            "message": "Update HomeActivity.kt"
+        },
+        {
+            "sha": "fef7f33a6fe3b59050ebc6ef7f74677470e44801",
+            "author": "danielfgmb",
+            "date": "2023-12-05T04:48:45Z",
+            "message": "Merge branch 'main' into Develop2"
+        },
+        {
+            "sha": "1a3d51d3054e3c55a6889bc740aaac1d7c6e93e0",
+            "author": "danielfgmb",
+            "date": "2023-12-05T04:48:12Z",
+            "message": "Micro Optimizations"
+        },
+        {
+            "sha": "bb2ca321a918e6755600429fecf619b8ff09fcf7",
+            "author": "danielfgmb",
+            "date": "2023-12-05T03:49:04Z",
+            "message": "Merge Errors"
+        },
+        {
+            "sha": "0401de9a6abb1d15bc76a9f74bc7234da4c7a21f",
+            "author": "danielfgmb",
+            "date": "2023-12-04T20:21:17Z",
+            "message": "Merge branch 'Develop3' into Develop2"
+        },
+        {
+            "sha": "e00ceb7610449dfcbcb40664835667f6acd72409",
+            "author": "danielfgmb",
+            "date": "2023-12-04T20:19:41Z",
+            "message": "Latest Changes"
+        },
+        {
+            "sha": "467defc4791735581dd4589223dda1d0321584bf",
+            "author": "Daniel Bernal",
+            "date": "2023-12-04T06:06:34Z",
+            "message": "Merge pull request #34 from ISIS3510Team35/Sprint4\n\nNew Implementations"
+        },
+        {
+            "sha": "1bc1ce4149d86a3285133728730bf1fb74235e22",
+            "author": "Daniel Bernal",
+            "date": "2023-12-04T06:06:22Z",
+            "message": "Merge branch 'main' into Sprint4"
+        },
+        {
+            "sha": "52e0a0cd36218e70e87bbbe0357218743bea00d6",
+            "author": "danielfgmb",
+            "date": "2023-12-02T15:06:40Z",
+            "message": "Merge branch 'Develop' into Develop3"
+        },
+        {
+            "sha": "92ba6cc19861c2761571a148b3ac74b80ef08ea6",
+            "author": "danielfgmb",
+            "date": "2023-12-02T15:01:38Z",
+            "message": "Daniel Finish\n\nXD"
+        },
+        {
+            "sha": "46e4611ba571a325410ab3671a56f30bd55bdfa7",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-12-02T12:28:59Z",
+            "message": "Account view finished and LruCache in Account ViewModel"
+        },
+        {
+            "sha": "91c29579f7cda2beb34ce92e65d9f48cc3f433e1",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-12-02T09:45:13Z",
+            "message": "Merge branch 'Develop' into DishView\n\n# Conflicts:\n#\tapp/src/main/java/com/edu/uniandes/fud/network/Service.kt"
+        },
+        {
+            "sha": "82679752ed584e1ea6fce069e4bc3a0fc198e748",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-12-02T09:32:36Z",
+            "message": "Account view start"
+        },
+        {
+            "sha": "e074137d42de241d4c5e25d6b2d37f0d162bf407",
+            "author": "danielfgmb",
+            "date": "2023-12-02T09:21:17Z",
+            "message": "Merge branch 'main' into Develop"
+        },
+        {
+            "sha": "203cd3a6755ac5ca1f424ac825374d96badf46eb",
+            "author": "Daniel Bernal",
+            "date": "2023-12-02T09:17:00Z",
+            "message": "Migration to a new DB"
+        },
+        {
+            "sha": "1a18b5c16c5cd53d14f61af6941a993f6f6d570e",
+            "author": "danielfgmb",
+            "date": "2023-12-02T09:00:23Z",
+            "message": "List View Implementation\n\nNew view added list view"
+        },
+        {
+            "sha": "85e72b9ce334d6c4990159b67aafeb4e9b50307b",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-12-02T07:18:31Z",
+            "message": "BQ Type 2 Favorites fixed"
+        },
+        {
+            "sha": "cb6831d58f045d9d5e0bdc7804905720a881a6d2",
+            "author": "Daniel Bernal",
+            "date": "2023-11-29T05:19:11Z",
+            "message": "New Screen Implemented\nNew Feature Implemented\nNew BQ Type 3 Implemented"
+        },
+        {
+            "sha": "1594c726189481885a42a76ac3173949112dfcd4",
+            "author": "Daniel Bernal",
+            "date": "2023-11-29T05:03:20Z",
+            "message": "New Screen Implemented\nNew Feature Implemented\nNew BQ Type 3 Implemented"
+        },
+        {
+            "sha": "3b6c8f48c633c5bfa6184261eae4912cce020467",
+            "author": "Daniel Bernal",
+            "date": "2023-11-28T08:42:06Z",
+            "message": "New feature implemented"
+        },
+        {
+            "sha": "441b1263ec8f8b5828b3697451d408086118a5c0",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-11-24T15:48:32Z",
+            "message": "Recommended feature finished"
+        },
+        {
+            "sha": "dda52facb3883bce971b01fdb940713575db2100",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-11-07T04:47:13Z",
+            "message": "Merge pull request #33 from ISIS3510Team35/Develop\n\nBQ Type 3 Implemented"
+        },
+        {
+            "sha": "fe963beec0ecf1d55411969f675eb20ac96dd9df",
+            "author": "Daniel Bernal",
+            "date": "2023-11-07T04:44:06Z",
+            "message": "BQ Type 3 Implemented"
+        },
+        {
+            "sha": "6fb5a6f588d238e14ec83438f625288ef78a4a0e",
+            "author": "danielfgmb",
+            "date": "2023-11-07T04:36:25Z",
+            "message": "Merge pull request #32 from ISIS3510Team35/Develop\n\nEventual Connectivity and Type 2 Business Question Implemented"
+        },
+        {
+            "sha": "5334dbf601d73d98c5ec38c60bf817086a3caf8a",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-11-07T04:18:13Z",
+            "message": "Merge branch 'Develop' of https://github.com/ISIS3510Team35/KotlinTeam into Develop"
+        },
+        {
+            "sha": "2409871297f50aa5ded3aa3d250cb9c7d0253c8f",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-11-07T04:16:18Z",
+            "message": "BQ Favorites finished"
+        },
+        {
+            "sha": "9f99697145a18436624414f36f9f890a0baf47cd",
+            "author": "Daniel Bernal",
+            "date": "2023-11-07T02:13:12Z",
+            "message": "Merge pull request #25 from ISIS3510Team35/Develop\n\nImage Caching Strategies and Type 1 Business Questions Implemented"
+        },
+        {
+            "sha": "b2d34fa41e2d253a80acfe543034e28f52460e28",
+            "author": "danielfgmb",
+            "date": "2023-11-07T01:43:40Z",
+            "message": "Crashlytics Implemented BQ1"
+        },
+        {
+            "sha": "9801fa797c5e0b667102819c68de7878ac936378",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-11-07T01:11:14Z",
+            "message": "Merge branch 'Develop' into DishView\n\n# Conflicts:\n#\tapp/src/main/java/com/edu/uniandes/fud/viewModel/login/LoginViewModel.kt"
+        },
+        {
+            "sha": "4a2a5fae2ace5edbe24541c5a315ba1977b970d7",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-11-07T01:05:47Z",
+            "message": "BQ Favorites first changes"
+        },
+        {
+            "sha": "9f3cd76c9bcbba2bacae778bcf4c6c9a8e07bad9",
+            "author": "Daniel Bernal",
+            "date": "2023-11-07T00:51:25Z",
+            "message": "Improvement of the Login View"
+        },
+        {
+            "sha": "fe308fb1ac5466f74f37b67fc665840c33d1e4c7",
+            "author": "danielfgmb",
+            "date": "2023-11-06T23:03:45Z",
+            "message": "App Starting Time BQ1"
+        },
+        {
+            "sha": "a67930f12d334f57bdfe9491d85db96de1f7bee2",
+            "author": "danielfgmb",
+            "date": "2023-11-06T21:25:36Z",
+            "message": "Image Caching Policies"
+        },
+        {
+            "sha": "3f4b01ba166cb3e33eaf0bf96f989e15f637d2c5",
+            "author": "danielfgmb",
+            "date": "2023-11-06T21:24:06Z",
+            "message": "Merge pull request #20 from ISIS3510Team35/Develop\n\nImplemented Local storage, Multi-threading and Eventual connectivity"
+        },
+        {
+            "sha": "d19b6dc863e7f1f03cdb3f5fe2958aec7548221b",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-11-03T14:13:28Z",
+            "message": "Merge branch 'DishView' into Develop"
+        },
+        {
+            "sha": "78e7038a2f9757fe288f768c6717a290d3462c78",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-11-03T07:23:27Z",
+            "message": "Restaurant detail and fix in UI"
+        },
+        {
+            "sha": "7ead20b0c42d95050a4e8872620728917f377532",
+            "author": "Daniel Bernal",
+            "date": "2023-11-03T02:47:49Z",
+            "message": "New BQ type 3 implemented"
+        },
+        {
+            "sha": "0e594e90f4ffa6a9e0b6739da41a11a3e68d9c32",
+            "author": "danielfgmb",
+            "date": "2023-10-26T18:42:27Z",
+            "message": "ContextAware Notification Toast"
+        },
+        {
+            "sha": "3bbb89b43c84e46ebe691099db6c0a3f4bed2952",
+            "author": "danielfgmb",
+            "date": "2023-10-26T16:11:35Z",
+            "message": "Improve RefreshRate"
+        },
+        {
+            "sha": "8bacd6d2d5072580587077e3800d35aa726b4c08",
+            "author": "danielfgmb",
+            "date": "2023-10-26T15:20:59Z",
+            "message": "Correcciones Generales"
+        },
+        {
+            "sha": "5e17b14b20686a1d7bf4b6372adc5d54e95da521",
+            "author": "danielfgmb",
+            "date": "2023-10-26T15:04:31Z",
+            "message": "SearchScreen SmartFeature"
+        },
+        {
+            "sha": "0ed4e7a5b86d45cb6c68bc4b027abd516292e69f",
+            "author": "danielfgmb",
+            "date": "2023-10-26T13:06:18Z",
+            "message": "FilterAnalytics"
+        },
+        {
+            "sha": "3f0d93051d14bc199285d60018df2d963216e628",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-10-26T09:48:58Z",
+            "message": "Offers navigation and tiny fixes"
+        },
+        {
+            "sha": "a6548590842101f8844abe9c33655c0cf76c69eb",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-10-26T09:08:14Z",
+            "message": "Merge branch 'DishView' into Develop\n\n# Conflicts:\n#\tapp/src/main/java/com/edu/uniandes/fud/ui/home/HomeScreen.kt"
+        },
+        {
+            "sha": "d2813e044f9f7a31b812dc7f61bc9b769c3e2872",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-10-26T08:55:29Z",
+            "message": "Product and Restaurant navigation finished"
+        },
+        {
+            "sha": "7fc7223f87a190a4e2530ce582b4f37edb739215",
+            "author": "Daniel Bernal",
+            "date": "2023-10-26T08:03:05Z",
+            "message": "Authentication FINISHED"
+        },
+        {
+            "sha": "b0b2601bff9713879b3549b9f324179290a24f92",
+            "author": "Daniel Bernal",
+            "date": "2023-10-26T07:38:09Z",
+            "message": "Smart Feature DONE"
+        },
+        {
+            "sha": "00ff27a7f093e39a52f9586acd4af82a3f3a8145",
+            "author": "Daniel Bernal",
+            "date": "2023-10-26T03:38:13Z",
+            "message": "Data retrieve ready"
+        },
+        {
+            "sha": "cb643df72adda15c994da22bc535b4b0af0a1888",
+            "author": "Daniel Bernal",
+            "date": "2023-10-26T02:24:11Z",
+            "message": "Changes in the atributes of restaurant"
+        },
+        {
+            "sha": "11b41b6d03afab89173d4b78967140dce01e56ca",
+            "author": "danielfgmb",
+            "date": "2023-10-26T00:22:14Z",
+            "message": "Search Activity Improvements and Bug Fixes"
+        },
+        {
+            "sha": "29bd5c9296c8170f7d931b441d692ffbfde9d830",
+            "author": "Daniel Bernal",
+            "date": "2023-10-19T08:59:20Z",
+            "message": "Structure changes"
+        },
+        {
+            "sha": "beb422f3e530b39e991c484e90627db4baf85758",
+            "author": "Daniel Bernal",
+            "date": "2023-10-18T05:22:26Z",
+            "message": "Fix merge of all views"
+        },
+        {
+            "sha": "2eb3f6a79556807c756bcf2f0830103a25c414ff",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-10-18T04:58:34Z",
+            "message": "Fix in DishViewModel and RestaurantActivity start"
+        },
+        {
+            "sha": "d56550251440dad01a0e2787a0330d09d0e0fa51",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-10-17T15:28:51Z",
+            "message": "Finished Dish Screen, Activity and ViewModel"
+        },
+        {
+            "sha": "71a2492faa45eb4234399693578f86cb2dece5fc",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-10-04T04:57:43Z",
+            "message": "Merge pull request #19 from ISIS3510Team35/Develop\n\nDevelopment Tested"
+        },
+        {
+            "sha": "76cdd4e400af11057368dcef130cc52f0947e6eb",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-10-04T04:36:42Z",
+            "message": "Merge pull request #18 from ISIS3510Team35/DishView\n\nMerge DishView branch into Develop"
+        },
+        {
+            "sha": "c56a5136c792ec1a39262175e60f7201f934a819",
+            "author": "danielfgmb",
+            "date": "2023-10-04T04:32:18Z",
+            "message": "Merge branch 'DataFix2' into Develop"
+        },
+        {
+            "sha": "9b7d9da86f63746e1537357e8e1b5314bf1f44c5",
+            "author": "danielfgmb",
+            "date": "2023-10-04T04:31:06Z",
+            "message": "SearchView Final"
+        },
+        {
+            "sha": "db3bb2816c098c409e63f57f4ff56a20477bac88",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-10-04T04:28:27Z",
+            "message": "Finished the Dish View"
+        },
+        {
+            "sha": "0b750bf91c897ae8d63d291905b55227314bebe7",
+            "author": "Daniel Bernal",
+            "date": "2023-10-04T03:55:34Z",
+            "message": "LoginView and Authentication Finished"
+        },
+        {
+            "sha": "a71140c9f01b95f47d4dad5b231cfee0a909f46a",
+            "author": "danielfgmb",
+            "date": "2023-10-04T02:35:38Z",
+            "message": "Data Fix to Flow Data"
+        },
+        {
+            "sha": "6ea4716fedf46426cff1b7c64b80cace9b674fd5",
+            "author": "Daniel Bernal",
+            "date": "2023-10-03T22:31:52Z",
+            "message": "Merge branch 'Develop' of https://github.com/ISIS3510Team35/KotlinTeam into Develop"
+        },
+        {
+            "sha": "d8f09080d2f645bf358e9e259099d8de4323a496",
+            "author": "Daniel Bernal",
+            "date": "2023-10-03T22:29:23Z",
+            "message": "User Model Implemented"
+        },
+        {
+            "sha": "9fec81ea07610463520f5284b949375cc559d750",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-10-03T22:09:47Z",
+            "message": "Merge from ISIS3510Team35/RestaurantView2\n\nFinished the Restaurant View"
+        },
+        {
+            "sha": "8fde23d64f986b6effe2bedc76508c7c2b9706eb",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-10-03T22:09:32Z",
+            "message": "Merge branch 'Develop' into RestaurantView2"
+        },
+        {
+            "sha": "769805a309b2664c24f168ce1a85489ad52820ff",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-10-03T21:51:30Z",
+            "message": "Finished the Restaurant View"
+        },
+        {
+            "sha": "e845eada53fb0e7c6d57edaca9fcf839409975fe",
+            "author": "danielfgmb",
+            "date": "2023-10-03T20:57:13Z",
+            "message": "Including Dishes Model, DTO, and Update Home"
+        },
+        {
+            "sha": "b9f4d781f96756ee6e3bdaaca21e288a22df3093",
+            "author": "danielfgmb",
+            "date": "2023-10-03T14:58:05Z",
+            "message": "Adding Dishes to repository and network firebase"
+        },
+        {
+            "sha": "59372fc9c0523e9f3b9611b7de18c9bec81c9857",
+            "author": "danielfgmb",
+            "date": "2023-10-03T09:35:15Z",
+            "message": "Adding repository & DAO for Restaurant and Firebase"
+        },
+        {
+            "sha": "bdddd93c296f112dbee632dcfcb606e28a58622d",
+            "author": "danielfgmb",
+            "date": "2023-10-02T12:12:19Z",
+            "message": "Update gitignore"
+        },
+        {
+            "sha": "ebce606ea198a456a2702a45f2310996d8a19aee",
+            "author": "danielfgmb",
+            "date": "2023-10-02T12:06:51Z",
+            "message": "fonts and vectorial logo"
+        },
+        {
+            "sha": "fdd91c5e41e8f494662e0ca16c0824789c3621dc",
+            "author": "Daniel Bernal",
+            "date": "2023-10-02T07:49:33Z",
+            "message": "Add Compose Functionality to LoginView"
+        },
+        {
+            "sha": "a88e319350674436e08f138690bc62319b3fd2d3",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:58:54Z",
+            "message": "Merge pull request #7 from ISIS3510Team35/RestaurantView\n\nRestaurant view completed"
+        },
+        {
+            "sha": "94cfc1da2415ff5310242f440e1871a7f5a6e56d",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:57:28Z",
+            "message": "Merge branch 'main' into RestaurantView"
+        },
+        {
+            "sha": "ee6655e23214fcd96e45baec40f6be72073f7887",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:51:21Z",
+            "message": "Delete settings.gradle.kts"
+        },
+        {
+            "sha": "3849d41b426b5fc41dbe9119cb4344248d152360",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:51:10Z",
+            "message": "Delete gradlew.bat"
+        },
+        {
+            "sha": "efe98f2069088e17c434ee3f47ef93d74c3ee0fb",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:50:58Z",
+            "message": "Delete gradlew"
+        },
+        {
+            "sha": "b77f0962000472c11ede96644bd685f92e044f5d",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:50:47Z",
+            "message": "Delete gradle.properties"
+        },
+        {
+            "sha": "7152d78d8db03918d889acd07fcbadba9eae680c",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:50:32Z",
+            "message": "Delete build.gradle.kts"
+        },
+        {
+            "sha": "80d801a66bea9e8d090527571fd95a2ac6377351",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:50:15Z",
+            "message": "Delete README.md"
+        },
+        {
+            "sha": "1d4129b219c7b56c5a1b4d07b7fe378e8be2acac",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:50:05Z",
+            "message": "Delete .gitignore"
+        },
+        {
+            "sha": "d0fecb80af8fc8c619f4396da472a084ae3cbcd0",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:49:53Z",
+            "message": "Delete gradle/wrapper directory"
+        },
+        {
+            "sha": "876e5e51b46bb4d776faa67dd4dcc140f0f11b7c",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:49:40Z",
+            "message": "Delete app directory"
+        },
+        {
+            "sha": "395b22a918afe6f3149d073b99ef4d5d146a7f10",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:49:30Z",
+            "message": "Delete .idea directory"
+        },
+        {
+            "sha": "c597171097b36da4d4d433147bc1e990dd6f0b4d",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:47:54Z",
+            "message": "Delete FuD/.gitkeep"
+        },
+        {
+            "sha": "2164b3ef7226859d5e57bf7f32702a5caff47eab",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:47:32Z",
+            "message": "Add files via upload"
+        },
+        {
+            "sha": "b3b09b60ec520682c33906e096e3cf73fef180c5",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:45:42Z",
+            "message": "Create .gitkeep"
+        },
+        {
+            "sha": "f4bcbaff765defac917aff969f5702510d6f88b7",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T09:38:47Z",
+            "message": "Merge pull request #6 from ISIS3510Team35/FilterView\n\nFilter View Finished"
+        },
+        {
+            "sha": "5507aa74993f3f05d4ae83fb7aaff0bea218f2cb",
+            "author": "danielfgmb",
+            "date": "2023-09-23T09:37:20Z",
+            "message": "Cambios personales\n\nxd"
+        },
+        {
+            "sha": "a89d883119fdb10f3f054fd0319926d430da8024",
+            "author": "Juan Pablo Martinez Pineda",
+            "date": "2023-09-23T09:34:10Z",
+            "message": "RestaurantView completed"
+        },
+        {
+            "sha": "122b116fdb4569992b9cbd1553061b10e25c174a",
+            "author": "Daniel Bernal",
+            "date": "2023-09-23T08:14:54Z",
+            "message": "Merge pull request #5 from ISIS3510Team35/HomeView\n\nHome View Finished"
+        },
+        {
+            "sha": "f71b4eb0feb5936beff156df688a62afbb9fca14",
+            "author": "danielfgmb",
+            "date": "2023-09-23T08:11:47Z",
+            "message": "Change the main folder, add Home view!"
+        },
+        {
+            "sha": "748e2c01ff7144ee763dfe14971549a908d3e706",
+            "author": "danielfgmb",
+            "date": "2023-09-23T07:17:15Z",
+            "message": "Merge pull request #4 from ISIS3510Team35/ProductOfferView\n\nProduct Offer View Finished\r\nThere is no conflict with main branch and also with this a feature was added"
+        },
+        {
+            "sha": "d224c17e6b52c2b1b5755db3c05a752778a81bb6",
+            "author": "Daniel Bernal",
+            "date": "2023-09-23T07:07:35Z",
+            "message": "ProductOfferView Finished"
+        },
+        {
+            "sha": "4aac2b6abe3da3335947f5235bf3b641a9559125",
+            "author": "Juan Pablo Martinez",
+            "date": "2023-09-23T03:46:55Z",
+            "message": "Merge pull request #2 from ISIS3510Team35/LoginView\n\nLogin view Finished"
+        },
+        {
+            "sha": "a1978dddac89123f140b524a363e9dbd38f6f4f7",
+            "author": "Daniel Bernal",
+            "date": "2023-09-23T02:34:48Z",
+            "message": "Add color and details to LoginView"
+        },
+        {
+            "sha": "24116d01bd081ecf34d8819c8372ea05203490f9",
+            "author": "Daniel Bernal",
+            "date": "2023-09-23T01:47:56Z",
+            "message": "Create LoginView"
+        },
+        {
+            "sha": "8173362351aa8a0820ac645f6d89db63c5b66821",
+            "author": "danielfgmb",
+            "date": "2023-09-22T20:57:04Z",
+            "message": "Create README.md"
+        }
+    ],
+    "issues": [
+        {
+            "number": 43,
+            "title": "Implementation of List View",
+            "state": "closed",
+            "created_at": "2023-12-05T05:21:43Z",
+            "closed_at": "2023-12-05T05:25:53Z",
+            "user": "danielfgmb",
+            "labels": [],
+            "assignees": [
+                "danielfgmb"
+            ]
+        },
+        {
+            "number": 42,
+            "title": "Implementation of BQ Type 4",
+            "state": "closed",
+            "created_at": "2023-12-05T05:17:47Z",
+            "closed_at": "2023-12-05T05:25:52Z",
+            "user": "JP-514",
+            "labels": [],
+            "assignees": [
+                "JP-514"
+            ]
+        },
+        {
+            "number": 41,
+            "title": "Implementation of BQ Type 2",
+            "state": "closed",
+            "created_at": "2023-12-05T05:17:18Z",
+            "closed_at": "2023-12-05T05:25:52Z",
+            "user": "danielfgmb",
+            "labels": [],
+            "assignees": [
+                "danielfgmb"
+            ]
+        },
+        {
+            "number": 40,
+            "title": "Implementation of Recommended feature",
+            "state": "closed",
+            "created_at": "2023-12-05T05:16:45Z",
+            "closed_at": "2023-12-05T05:25:51Z",
+            "user": "JP-514",
+            "labels": [],
+            "assignees": [
+                "JP-514"
+            ]
+        },
+        {
+            "number": 39,
+            "title": "Implementation of Account View",
+            "state": "closed",
+            "created_at": "2023-12-05T05:14:39Z",
+            "closed_at": "2023-12-05T05:25:51Z",
+            "user": "JP-514",
+            "labels": [],
+            "assignees": [
+                "JP-514"
+            ]
+        },
+        {
+            "number": 38,
+            "title": "Implementation of Dishes by Hour Feature",
+            "state": "closed",
+            "created_at": "2023-12-05T05:13:54Z",
+            "closed_at": "2023-12-05T05:25:50Z",
+            "user": "danielfgmb",
+            "labels": [],
+            "assignees": [
+                "danielfgmb"
+            ]
+        },
+        {
+            "number": 37,
+            "title": "Implementation of Forget Password Feature",
+            "state": "closed",
+            "created_at": "2023-12-04T06:16:23Z",
+            "closed_at": "2023-12-04T06:16:53Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 36,
+            "title": "Implementation of New View",
+            "state": "closed",
+            "created_at": "2023-12-04T06:15:37Z",
+            "closed_at": "2023-12-04T06:17:00Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 35,
+            "title": "Implementation of BQ Type 3",
+            "state": "closed",
+            "created_at": "2023-12-04T06:10:30Z",
+            "closed_at": "2023-12-04T06:17:08Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 31,
+            "title": "Implementation of BQ Type 3",
+            "state": "closed",
+            "created_at": "2023-11-07T02:27:26Z",
+            "closed_at": "2023-11-07T05:03:01Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 30,
+            "title": "Implementation of Multi-Threading",
+            "state": "closed",
+            "created_at": "2023-11-07T02:24:45Z",
+            "closed_at": "2023-11-07T02:28:32Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "danielfgmb",
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 29,
+            "title": "Implementation of Eventual Connectivity",
+            "state": "closed",
+            "created_at": "2023-11-07T02:23:45Z",
+            "closed_at": "2023-11-07T02:29:30Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "danielfgmb",
+                "JP-514",
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 28,
+            "title": "Implementation of Local Storage",
+            "state": "closed",
+            "created_at": "2023-11-07T02:22:59Z",
+            "closed_at": "2023-11-07T02:29:44Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "danielfgmb",
+                "JP-514",
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 26,
+            "title": "Implementation of Caching strategies",
+            "state": "closed",
+            "created_at": "2023-11-07T02:21:30Z",
+            "closed_at": "2023-11-07T02:28:01Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "danielfgmb"
+            ]
+        },
+        {
+            "number": 24,
+            "title": "Implementation of BQ Type 2",
+            "state": "closed",
+            "created_at": "2023-11-07T01:52:58Z",
+            "closed_at": "2023-11-07T05:05:34Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "JP-514"
+            ]
+        },
+        {
+            "number": 22,
+            "title": "Implementation of BQ Type 1",
+            "state": "closed",
+            "created_at": "2023-11-07T01:51:40Z",
+            "closed_at": "2023-11-07T02:13:14Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "danielfgmb"
+            ]
+        },
+        {
+            "number": 21,
+            "title": "Implementation of BQ Type 1",
+            "state": "closed",
+            "created_at": "2023-11-07T01:51:10Z",
+            "closed_at": "2023-11-07T02:13:13Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "danielfgmb"
+            ]
+        },
+        {
+            "number": 17,
+            "title": "Implementation of Navigation",
+            "state": "closed",
+            "created_at": "2023-10-04T04:18:52Z",
+            "closed_at": "2023-10-04T04:57:48Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "JP-514"
+            ]
+        },
+        {
+            "number": 16,
+            "title": "Improve Product Offer View",
+            "state": "closed",
+            "created_at": "2023-10-04T04:18:22Z",
+            "closed_at": "2023-10-04T04:57:47Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "JP-514"
+            ]
+        },
+        {
+            "number": 15,
+            "title": "Add Restaurant View",
+            "state": "closed",
+            "created_at": "2023-10-04T04:17:54Z",
+            "closed_at": "2023-10-04T04:53:29Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "JP-514"
+            ]
+        },
+        {
+            "number": 14,
+            "title": "Implementation of BQ - Type 2",
+            "state": "closed",
+            "created_at": "2023-10-04T04:17:29Z",
+            "closed_at": "2023-10-04T04:57:47Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "danielfgmb"
+            ]
+        },
+        {
+            "number": 13,
+            "title": "Add Search View",
+            "state": "closed",
+            "created_at": "2023-10-04T04:16:40Z",
+            "closed_at": "2023-10-04T04:57:46Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "danielfgmb"
+            ]
+        },
+        {
+            "number": 12,
+            "title": "Add Home View",
+            "state": "closed",
+            "created_at": "2023-10-04T04:16:15Z",
+            "closed_at": "2023-10-04T04:57:46Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "danielfgmb"
+            ]
+        },
+        {
+            "number": 11,
+            "title": "Implementation of BQ Type 2",
+            "state": "closed",
+            "created_at": "2023-10-04T04:15:33Z",
+            "closed_at": "2023-10-04T04:57:45Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 10,
+            "title": "Add DBConnection",
+            "state": "closed",
+            "created_at": "2023-10-04T04:14:02Z",
+            "closed_at": "2023-10-04T04:57:45Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 9,
+            "title": "Add Authentication to Login View",
+            "state": "closed",
+            "created_at": "2023-10-04T04:13:10Z",
+            "closed_at": "2023-10-04T04:57:44Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 3,
+            "title": "Product Offer View",
+            "state": "closed",
+            "created_at": "2023-09-23T07:09:08Z",
+            "closed_at": "2023-09-23T07:17:16Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 1,
+            "title": "Login View",
+            "state": "closed",
+            "created_at": "2023-09-23T03:35:22Z",
+            "closed_at": "2023-09-23T03:46:56Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        }
+    ],
+    "pull_requests": [
+        {
+            "number": 44,
+            "title": "Add Views and Features",
+            "state": "closed",
+            "created_at": "2023-12-05T05:24:12Z",
+            "closed_at": "2023-12-05T05:25:49Z",
+            "merged_at": "2023-12-05T05:25:49Z",
+            "user": "danielfgmb",
+            "labels": [],
+            "assignees": [
+                "danielfgmb",
+                "JP-514"
+            ]
+        },
+        {
+            "number": 34,
+            "title": "New Implementations",
+            "state": "closed",
+            "created_at": "2023-11-29T05:29:28Z",
+            "closed_at": "2023-12-04T06:06:34Z",
+            "merged_at": "2023-12-04T06:06:34Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 33,
+            "title": "BQ Type 3 Implemented",
+            "state": "closed",
+            "created_at": "2023-11-07T04:45:27Z",
+            "closed_at": "2023-11-07T04:47:13Z",
+            "merged_at": "2023-11-07T04:47:13Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 32,
+            "title": "Eventual Connectivity and Type 2 Business Question Implemented",
+            "state": "closed",
+            "created_at": "2023-11-07T04:34:58Z",
+            "closed_at": "2023-11-07T04:36:25Z",
+            "merged_at": "2023-11-07T04:36:25Z",
+            "user": "JP-514",
+            "labels": [],
+            "assignees": [
+                "JP-514"
+            ]
+        },
+        {
+            "number": 25,
+            "title": "Image Caching Strategies and Type 1 Business Questions Implemented",
+            "state": "closed",
+            "created_at": "2023-11-07T02:02:56Z",
+            "closed_at": "2023-11-07T02:13:13Z",
+            "merged_at": "2023-11-07T02:13:13Z",
+            "user": "danielfgmb",
+            "labels": [],
+            "assignees": []
+        },
+        {
+            "number": 20,
+            "title": "Implemented Local storage, Multi-threading and Eventual connectivity",
+            "state": "closed",
+            "created_at": "2023-11-06T03:02:57Z",
+            "closed_at": "2023-11-06T21:24:06Z",
+            "merged_at": "2023-11-06T21:24:06Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 19,
+            "title": "Development Tested",
+            "state": "closed",
+            "created_at": "2023-10-04T04:54:07Z",
+            "closed_at": "2023-10-04T04:57:43Z",
+            "merged_at": "2023-10-04T04:57:43Z",
+            "user": "danielfgmb",
+            "labels": [],
+            "assignees": []
+        },
+        {
+            "number": 18,
+            "title": "Merge DishView branch into Develop",
+            "state": "closed",
+            "created_at": "2023-10-04T04:36:29Z",
+            "closed_at": "2023-10-04T04:36:42Z",
+            "merged_at": "2023-10-04T04:36:42Z",
+            "user": "JP-514",
+            "labels": [],
+            "assignees": []
+        },
+        {
+            "number": 8,
+            "title": "Finished the Restaurant View",
+            "state": "closed",
+            "created_at": "2023-10-03T21:55:49Z",
+            "closed_at": "2023-10-03T22:09:47Z",
+            "merged_at": "2023-10-03T22:09:47Z",
+            "user": "JP-514",
+            "labels": [],
+            "assignees": []
+        },
+        {
+            "number": 7,
+            "title": "Restaurant view completed",
+            "state": "closed",
+            "created_at": "2023-09-23T09:51:58Z",
+            "closed_at": "2023-09-23T09:58:54Z",
+            "merged_at": "2023-09-23T09:58:54Z",
+            "user": "JP-514",
+            "labels": [],
+            "assignees": []
+        },
+        {
+            "number": 6,
+            "title": "Filter View Finished",
+            "state": "closed",
+            "created_at": "2023-09-23T09:37:57Z",
+            "closed_at": "2023-09-23T09:38:47Z",
+            "merged_at": "2023-09-23T09:38:47Z",
+            "user": "danielfgmb",
+            "labels": [],
+            "assignees": []
+        },
+        {
+            "number": 5,
+            "title": "Home View Finished",
+            "state": "closed",
+            "created_at": "2023-09-23T08:12:57Z",
+            "closed_at": "2023-09-23T08:14:54Z",
+            "merged_at": "2023-09-23T08:14:54Z",
+            "user": "danielfgmb",
+            "labels": [],
+            "assignees": []
+        },
+        {
+            "number": 4,
+            "title": "Product Offer View Finished",
+            "state": "closed",
+            "created_at": "2023-09-23T07:12:25Z",
+            "closed_at": "2023-09-23T07:17:15Z",
+            "merged_at": "2023-09-23T07:17:15Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        },
+        {
+            "number": 2,
+            "title": "Login view Finished",
+            "state": "closed",
+            "created_at": "2023-09-23T03:40:50Z",
+            "closed_at": "2023-09-23T03:46:55Z",
+            "merged_at": "2023-09-23T03:46:55Z",
+            "user": "HIPERMAST",
+            "labels": [],
+            "assignees": [
+                "HIPERMAST"
+            ]
+        }
+    ],
+    "discussions": [],
+    "projects": [],
+    "contributor_stats": [
+        {
+            "author": "HIPERMAST",
+            "total_commits": 19,
+            "weeks": [
+                {
+                    "w": 1694908800,
+                    "a": 1036,
+                    "d": 17,
+                    "c": 3
+                },
+                {
+                    "w": 1695513600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1696118400,
+                    "a": 1955,
+                    "d": 2368,
+                    "c": 3
+                },
+                {
+                    "w": 1696723200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1697328000,
+                    "a": 1101,
+                    "d": 724,
+                    "c": 2
+                },
+                {
+                    "w": 1697932800,
+                    "a": 251,
+                    "d": 139,
+                    "c": 4
+                },
+                {
+                    "w": 1698537600,
+                    "a": 66,
+                    "d": 24,
+                    "c": 1
+                },
+                {
+                    "w": 1699142400,
+                    "a": 164,
+                    "d": 83,
+                    "c": 2
+                },
+                {
+                    "w": 1699747200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1700352000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1700956800,
+                    "a": 2899,
+                    "d": 413,
+                    "c": 4
+                },
+                {
+                    "w": 1701561600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1702166400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1702771200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1703376000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1703980800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1704585600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1705190400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1705795200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1706400000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1707004800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1707609600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1708214400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1708819200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1709424000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1710028800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1710633600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1711238400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1711843200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1712448000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1713052800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1713657600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1714262400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1714867200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1715472000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1716076800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1716681600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1717286400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1717891200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1718496000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1719100800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1719705600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1720310400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1720915200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1721520000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1722124800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1722729600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1723334400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1723939200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1724544000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1725148800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1725753600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1726358400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1726963200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1727568000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1728172800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                }
+            ]
+        },
+        {
+            "author": "danielfgmb",
+            "total_commits": 25,
+            "weeks": [
+                {
+                    "w": 1694908800,
+                    "a": 2010,
+                    "d": 1021,
+                    "c": 3
+                },
+                {
+                    "w": 1695513600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1696118400,
+                    "a": 2358,
+                    "d": 361,
+                    "c": 7
+                },
+                {
+                    "w": 1696723200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1697328000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1697932800,
+                    "a": 727,
+                    "d": 181,
+                    "c": 6
+                },
+                {
+                    "w": 1698537600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1699142400,
+                    "a": 124,
+                    "d": 11,
+                    "c": 3
+                },
+                {
+                    "w": 1699747200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1700352000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1700956800,
+                    "a": 657,
+                    "d": 79,
+                    "c": 2
+                },
+                {
+                    "w": 1701561600,
+                    "a": 267,
+                    "d": 107,
+                    "c": 4
+                },
+                {
+                    "w": 1702166400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1702771200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1703376000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1703980800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1704585600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1705190400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1705795200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1706400000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1707004800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1707609600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1708214400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1708819200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1709424000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1710028800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1710633600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1711238400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1711843200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1712448000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1713052800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1713657600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1714262400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1714867200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1715472000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1716076800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1716681600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1717286400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1717891200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1718496000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1719100800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1719705600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1720310400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1720915200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1721520000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1722124800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1722729600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1723334400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1723939200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1724544000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1725148800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1725753600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1726358400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1726963200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1727568000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1728172800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                }
+            ]
+        },
+        {
+            "author": "JP-514",
+            "total_commits": 27,
+            "weeks": [
+                {
+                    "w": 1694908800,
+                    "a": 1219,
+                    "d": 1088,
+                    "c": 14
+                },
+                {
+                    "w": 1695513600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1696118400,
+                    "a": 877,
+                    "d": 33,
+                    "c": 2
+                },
+                {
+                    "w": 1696723200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1697328000,
+                    "a": 162,
+                    "d": 44,
+                    "c": 2
+                },
+                {
+                    "w": 1697932800,
+                    "a": 140,
+                    "d": 73,
+                    "c": 2
+                },
+                {
+                    "w": 1698537600,
+                    "a": 103,
+                    "d": 21,
+                    "c": 1
+                },
+                {
+                    "w": 1699142400,
+                    "a": 231,
+                    "d": 44,
+                    "c": 2
+                },
+                {
+                    "w": 1699747200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1700352000,
+                    "a": 171,
+                    "d": 58,
+                    "c": 1
+                },
+                {
+                    "w": 1700956800,
+                    "a": 579,
+                    "d": 186,
+                    "c": 3
+                },
+                {
+                    "w": 1701561600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1702166400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1702771200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1703376000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1703980800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1704585600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1705190400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1705795200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1706400000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1707004800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1707609600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1708214400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1708819200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1709424000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1710028800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1710633600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1711238400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1711843200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1712448000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1713052800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1713657600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1714262400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1714867200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1715472000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1716076800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1716681600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1717286400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1717891200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1718496000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1719100800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1719705600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1720310400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1720915200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1721520000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1722124800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1722729600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1723334400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1723939200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1724544000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1725148800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1725753600,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1726358400,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1726963200,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1727568000,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                },
+                {
+                    "w": 1728172800,
+                    "a": 0,
+                    "d": 0,
+                    "c": 0
+                }
+            ]
+        }
+    ]
+}
