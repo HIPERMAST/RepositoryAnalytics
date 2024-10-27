@@ -30,4 +30,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update stats
-          commit_author: HIPERMAST
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_author: bernaldaniel.ca@gmail.com
+          file_pattern: stats.json
