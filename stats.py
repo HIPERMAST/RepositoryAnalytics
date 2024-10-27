@@ -1,6 +1,5 @@
 import requests
 import json
-import time
 
 # Configuración
 GITHUB_API_URL = "https://api.github.com"
