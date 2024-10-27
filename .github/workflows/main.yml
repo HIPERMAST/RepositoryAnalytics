@@ -32,5 +32,5 @@ jobs:
           commit_message: Update stats
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
-          commit_author: 78066378+HIPERMAST@users.noreply.github.com.
+          commit_author: da.bernalc1@uniandes.edu.co
           file_pattern: stats.json
