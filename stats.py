@@ -7,13 +7,15 @@ GITHUB_API_URL = "https://api.github.com"
 ORGANIZATION = "ISIS3510Team35"
 REPOSITORY = "KotlinTeam"
 
-# Incluye tu token aquí
-GITHUB_TOKEN = "TOKEN"  # Reemplaza 'TU_TOKEN_AQUÍ' con tu token real
+# Incluye tu token aquí (o deja como None si no lo tienes)
+GITHUB_TOKEN = None  # Reemplaza 'None' con tu token real si lo tienes
 
 HEADERS = {
-    "Accept": "application/vnd.github.v3+json",
-    "Authorization": f"token {GITHUB_TOKEN}"
+    "Accept": "application/vnd.github.v3+json"
 }
+
+if GITHUB_TOKEN:
+    HEADERS["Authorization"] = f"token {GITHUB_TOKEN}"
 
 def get_paginated_data(url, params=None, headers=None):
     if params is None:
@@ -56,7 +58,7 @@ def get_org_profile(organization):
 
 def get_org_members(organization):
     url = f"{GITHUB_API_URL}/orgs/{organization}/members"
-    members = get_paginated_data(url)
+    members = get_paginated_data(url) if GITHUB_TOKEN else []
     return members
 
 def get_org_repos(organization):
@@ -83,36 +85,38 @@ def get_repo_issues(owner, repo):
 def get_repo_pulls(owner, repo):
     url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/pulls"
     params = {"state": "all"}
-    pulls = get_paginated_data(url, params)
+    pulls = get_paginated_data(url, params) if GITHUB_TOKEN else []
     return pulls
 
 def get_repo_workflows(owner, repo):
     url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/actions/workflows"
-    workflows = get_paginated_data(url)
+    workflows = get_paginated_data(url) if GITHUB_TOKEN else []
     return workflows
 
 def get_repo_discussions(owner, repo):
     url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/discussions"
     headers = HEADERS.copy()
     headers['Accept'] = 'application/vnd.github.v3+json, application/vnd.github.echo-preview+json'
-    discussions = get_paginated_data(url, headers=headers)
+    discussions = get_paginated_data(url, headers=headers) if GITHUB_TOKEN else []
     return discussions
 
 def get_org_projects(organization):
     url = f"{GITHUB_API_URL}/orgs/{organization}/projects"
     headers = HEADERS.copy()
     headers['Accept'] = 'application/vnd.github.inertia-preview+json'
-    projects = get_paginated_data(url, headers=headers)
+    projects = get_paginated_data(url, headers=headers) if GITHUB_TOKEN else []
     return projects
 
 def get_repo_contributor_stats(owner, repo):
     url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/stats/contributors"
     headers = HEADERS.copy()
+    if not GITHUB_TOKEN:
+        print("El token es necesario para obtener las estadísticas de contribución del repositorio.")
+        return []
     response = requests.get(url, headers=headers)
     if response.status_code == 202:
         # Stats are being generated, need to wait and retry
         print("Generando estadísticas de contribuciones, esperando 3 segundos...")
-        time.sleep(3)
         return get_repo_contributor_stats(owner, repo)
     elif response.status_code != 200:
         print(f"Error al obtener estadísticas de contribuciones: {response.status_code}")
@@ -124,22 +128,26 @@ def main():
 
     # Obtener perfil de la organización
     org_profile = get_org_profile(ORGANIZATION)
-    data['organization_profile'] = {
-        'login': org_profile.get('login'),
-        'name': org_profile.get('name'),
-        'description': org_profile.get('description'),
-        'blog': org_profile.get('blog'),
-        'location': org_profile.get('location'),
-        'email': org_profile.get('email'),
-        'avatar_url': org_profile.get('avatar_url'),
-        'html_url': org_profile.get('html_url'),
-        'public_repos': org_profile.get('public_repos'),
-        'public_members': org_profile.get('public_members_url'),
-    }
+    if org_profile:
+        data['organization_profile'] = {
+            'login': org_profile.get('login'),
+            'name': org_profile.get('name'),
+            'description': org_profile.get('description'),
+            'blog': org_profile.get('blog'),
+            'location': org_profile.get('location'),
+            'email': org_profile.get('email'),
+            'avatar_url': org_profile.get('avatar_url'),
+            'html_url': org_profile.get('html_url'),
+            'public_repos': org_profile.get('public_repos'),
+            'public_members': org_profile.get('public_members_url'),
+        }
 
-    # Obtener miembros de la organización
-    members = get_org_members(ORGANIZATION)
-    data['organization_members'] = [{'login': member['login'], 'id': member['id'], 'avatar_url': member['avatar_url']} for member in members]
+    # Obtener miembros de la organización si hay token
+    if GITHUB_TOKEN:
+        members = get_org_members(ORGANIZATION)
+        data['organization_members'] = [{'login': member['login'], 'id': member['id'], 'avatar_url': member['avatar_url']} for member in members]
+    else:
+        data['organization_members'] = []
 
     # Obtener repositorios de la organización con más detalles
     repos = get_org_repos(ORGANIZATION)
@@ -189,60 +197,75 @@ def main():
         'assignees': [assignee['login'] for assignee in issue.get('assignees', [])]
     } for issue in issues if 'pull_request' not in issue]
 
-    # Obtener pull requests del repositorio
-    pulls = get_repo_pulls(ORGANIZATION, REPOSITORY)
-    data['pull_requests'] = [{
-        'number': pr['number'],
-        'title': pr['title'],
-        'state': pr['state'],
-        'created_at': pr['created_at'],
-        'closed_at': pr.get('closed_at'),
-        'merged_at': pr.get('merged_at'),
-        'user': pr['user']['login'],
-        'labels': [label['name'] for label in pr.get('labels', [])],
-        'assignees': [assignee['login'] for assignee in pr.get('assignees', [])]
-    } for pr in pulls]
+    # Obtener pull requests del repositorio si hay token
+    if GITHUB_TOKEN:
+        pulls = get_repo_pulls(ORGANIZATION, REPOSITORY)
+        data['pull_requests'] = [{
+            'number': pr['number'],
+            'title': pr['title'],
+            'state': pr['state'],
+            'created_at': pr['created_at'],
+            'closed_at': pr.get('closed_at'),
+            'merged_at': pr.get('merged_at'),
+            'user': pr['user']['login'],
+            'labels': [label['name'] for label in pr.get('labels', [])],
+            'assignees': [assignee['login'] for assignee in pr.get('assignees', [])]
+        } for pr in pulls]
+    else:
+        data['pull_requests'] = []
 
-    # # Obtener workflows (GitHub Actions)
-    # workflows = get_repo_workflows(ORGANIZATION, REPOSITORY)
-    # data['workflows'] = [{
-    #     'id': workflow['id'],
-    #     'name': workflow['name'],
-    #     'state': workflow['state'],
-    #     'created_at': workflow['created_at'],
-    #     'updated_at': workflow['updated_at'],
-    #     'html_url': workflow['html_url']
-    # } for workflow in workflows]
+    # Obtener workflows (GitHub Actions) si hay token
+    if GITHUB_TOKEN:
+        workflows = get_repo_workflows(ORGANIZATION, REPOSITORY)
+        data['workflows'] = [{
+            'id': workflow['id'],
+            'name': workflow['name'],
+            'state': workflow['state'],
+            'created_at': workflow['created_at'],
+            'updated_at': workflow['updated_at'],
+            'html_url': workflow['html_url']
+        } for workflow in workflows]
+    else:
+        data['workflows'] = []
 
-    # Obtener discusiones del repositorio (NO FUNCIONA)
-    discussions = get_repo_discussions(ORGANIZATION, REPOSITORY)
-    data['discussions'] = [{
-        'number': discussion['number'],
-        'title': discussion['title'],
-        'state': discussion['state'],
-        'created_at': discussion['created_at'],
-        'user': discussion['user']['login'],
-        'comments': discussion['comments']
-    } for discussion in discussions]
+    # Obtener discusiones del repositorio si hay token
+    if GITHUB_TOKEN:
+        discussions = get_repo_discussions(ORGANIZATION, REPOSITORY)
+        data['discussions'] = [{
+            'number': discussion['number'],
+            'title': discussion['title'],
+            'state': discussion['state'],
+            'created_at': discussion['created_at'],
+            'user': discussion['user']['login'],
+            'comments': discussion['comments']
+        } for discussion in discussions]
+    else:
+        data['discussions'] = []
 
-    # Obtener proyectos de la organización
-    projects = get_org_projects(ORGANIZATION)
-    data['projects'] = [{
-        'id': project['id'],
-        'name': project['name'],
-        'body': project.get('body'),
-        'state': project['state'],
-        'created_at': project['created_at'],
-        'updated_at': project['updated_at']
-    } for project in projects]
+    # Obtener proyectos de la organización si hay token
+    if GITHUB_TOKEN:
+        projects = get_org_projects(ORGANIZATION)
+        data['projects'] = [{
+            'id': project['id'],
+            'name': project['name'],
+            'body': project.get('body'),
+            'state': project['state'],
+            'created_at': project['created_at'],
+            'updated_at': project['updated_at']
+        } for project in projects]
+    else:
+        data['projects'] = []
 
-    # Obtener estadísticas de contribución del repositorio
-    contributor_stats = get_repo_contributor_stats(ORGANIZATION, REPOSITORY)
-    data['contributor_stats'] = [{
-        'author': stat['author']['login'],
-        'total_commits': stat['total'],
-        'weeks': stat['weeks']
-    } for stat in contributor_stats] if contributor_stats else []
+    # Obtener estadísticas de contribución del repositorio si hay token
+    if GITHUB_TOKEN:
+        contributor_stats = get_repo_contributor_stats(ORGANIZATION, REPOSITORY)
+        data['contributor_stats'] = [{
+            'author': stat['author']['login'],
+            'total_commits': stat['total'],
+            'weeks': stat['weeks']
+        } for stat in contributor_stats] if contributor_stats else []
+    else:
+        data['contributor_stats'] = []
 
     # Guardar datos en stats.json
     with open('stats.json', 'w', encoding='utf-8') as f:
