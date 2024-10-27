@@ -60,7 +60,7 @@ def get_org_profile(organization):
 
 def get_org_members(organization):
     url = f"{GITHUB_API_URL}/orgs/{organization}/members"
-    members = get_paginated_data(url) if GITHUB_TOKEN else []
+    members = get_paginated_data(url)
     return members
 
 def get_org_repos(organization):
@@ -106,7 +106,7 @@ def get_org_projects(organization):
     url = f"{GITHUB_API_URL}/orgs/{organization}/projects"
     headers = HEADERS.copy()
     headers['Accept'] = 'application/vnd.github.inertia-preview+json'
-    projects = get_paginated_data(url, headers=headers) if GITHUB_TOKEN else []
+    projects = get_paginated_data(url, headers=headers)
     return projects
 
 def get_repo_contributor_stats(owner, repo):
@@ -139,7 +139,7 @@ def main():
             'public_members': org_profile.get('public_members_url'),
         }
 
-    # Obtener miembros de la organización si hay token
+    # Obtener miembros de la organización
     if GITHUB_TOKEN:
         members = get_org_members(ORGANIZATION)
         data['organization_members'] = [{'login': member['login'], 'id': member['id'], 'avatar_url': member['avatar_url']} for member in members]
