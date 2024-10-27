@@ -27,9 +27,12 @@ def get_paginated_data(url, params=None, headers=None):
     while url:
         response = requests.get(url, headers=headers, params=params)
         if response.status_code != 200:
-            print(f"Error al obtener datos: {response.status_code}")
+            print(f"Error al obtener datos de {url.split('/')[-1]}: {response.status_code}")
             break
-        page_data = response.json()
+        if 'workflows' in url:
+            page_data = response.json().get('workflows', [])
+        else:
+            page_data = response.json()
         data.extend(page_data)
 
         # Obtener el enlace a la siguiente página desde el encabezado 'Link'
@@ -85,19 +88,19 @@ def get_repo_issues(owner, repo):
 def get_repo_pulls(owner, repo):
     url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/pulls"
     params = {"state": "all"}
-    pulls = get_paginated_data(url, params) if GITHUB_TOKEN else []
+    pulls = get_paginated_data(url, params)
     return pulls
 
 def get_repo_workflows(owner, repo):
     url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/actions/workflows"
-    workflows = get_paginated_data(url) if GITHUB_TOKEN else []
+    workflows = get_paginated_data(url, headers=HEADERS)
     return workflows
 
 def get_repo_discussions(owner, repo):
     url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/discussions"
     headers = HEADERS.copy()
     headers['Accept'] = 'application/vnd.github.v3+json, application/vnd.github.echo-preview+json'
-    discussions = get_paginated_data(url, headers=headers) if GITHUB_TOKEN else []
+    discussions = get_paginated_data(url, headers=headers)
     return discussions
 
 def get_org_projects(organization):
@@ -110,13 +113,8 @@ def get_org_projects(organization):
 def get_repo_contributor_stats(owner, repo):
     url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/stats/contributors"
     headers = HEADERS.copy()
-    if not GITHUB_TOKEN:
-        print("El token es necesario para obtener las estadísticas de contribución del repositorio.")
-        return []
     response = requests.get(url, headers=headers)
     if response.status_code == 202:
-        # Stats are being generated, need to wait and retry
-        print("Generando estadísticas de contribuciones, esperando 3 segundos...")
         return get_repo_contributor_stats(owner, repo)
     elif response.status_code != 200:
         print(f"Error al obtener estadísticas de contribuciones: {response.status_code}")
