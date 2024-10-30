@@ -1,0 +1,68 @@
+# Ignore temporary files, build artifacts, and log files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+
+# Ignore auto-generated VS/JetBrains Rider project files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Ignore crash reports and metadata
+*.pid
+*.stackdump
+
+# Unity cache directory
+[Dd]irectory/
+
+# Ignore packaged files
+*.unitypackage
+
+# Ignore hidden folders for Unity
+.DS_Store
+.idea/
+.vscode/
+*.apk
+*.aab
+
+# GitHub and Git-related files
+.gitattributes
+.gitignore
+
+# Ignore Python environment files (if present)
+__pycache__/
+*.pyc
+*.pyo
+
+# Exclude the stats.json if it is auto-generated
+# stats.json
+
+# Optionally, ignore the specific 'stats' folder if it's used for temporary data
+stats/
+
+# Ignore the main game executable and related artifacts
+*.exe
+*.dll
+*.app
+*.so
+*.dylib
+
+# Ignore Unity-generated materials and metadata (if not custom)
+*.meta
+
+# Ignore Play mode TestRunner results
+*.TestRunner/
+
+# Ignore node_modules (if you are using npm in your Unity project)
+node_modules/
