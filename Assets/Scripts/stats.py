@@ -1,19 +1,19 @@
 import requests
 import json
+import os
+import sys
 
-# Configuración
+# GitHub API URL
 GITHUB_API_URL = "https://api.github.com"
-ORGANIZATION = "ISIS3510Team35"
-REPOSITORY = "KotlinTeam"
 
-# Incluye tu token aquí (o deja como None si no lo tienes)
-GITHUB_TOKEN = None  # Reemplaza 'None' con tu token real si lo tienes
+# Accept command-line arguments for the organization, repository, and token
+ORGANIZATION = sys.argv[1] if len(sys.argv) > 1 else "DefaultOrg"
+REPOSITORY = sys.argv[2] if len(sys.argv) > 2 else "DefaultRepo"
+GITHUB_TOKEN = sys.argv[3] if len(sys.argv) > 3 else None
 
-HEADERS = {
-    "Accept": "application/vnd.github.v3+json"
-}
-
-if GITHUB_TOKEN:
+# Configure request headers
+HEADERS = {"Accept": "application/vnd.github.v3+json"}
+if GITHUB_TOKEN and GITHUB_TOKEN != "None":
     HEADERS["Authorization"] = f"token {GITHUB_TOKEN}"
 
 def get_paginated_data(url, params=None, headers=None):
@@ -264,11 +264,14 @@ def main():
     else:
         data['contributor_stats'] = []
 
-    # Guardar datos en stats.json
-    with open('stats.json', 'w', encoding='utf-8') as f:
+    # Save the data in the StreamingAssets folder
+    save_path = os.path.join('Assets', 'Stats', 'stats.json')
+    os.makedirs(os.path.dirname(save_path), exist_ok=True)  # Ensure folder exists
+
+    with open(save_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
-    print("El archivo stats.json ha sido creado con éxito.")
+    print("stats.json has been successfully created.")
 
 if __name__ == "__main__":
     main()

@@ -41,10 +41,13 @@ public class MainMenu : MonoBehaviour
             return;
         }
 
-        bool useToken = !string.IsNullOrEmpty(githubToken);
+        if (githubToken == "None")
+        {
+            Debug.LogWarning("No GitHub token provided. Stats may be limited.");
+        }
 
         // Run the Python script and load data
-        PythonRunner.RunPythonScript(orgName, repoName, useToken);
+        PythonRunner.RunPythonScript(orgName, repoName, githubToken);
         memberScript.LoadDataFromJSON();
     }
 
