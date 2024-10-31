@@ -45,7 +45,7 @@ public class IssueSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable 
         for (int i = startIndex; i < endIndex; i++)
         {
             var issue = issues[i];
-            Vector3 position = startPosition + new Vector3(-i - startIndex, 0, 0); // Arrange along Z-axis
+            Vector3 position = startPosition + new Vector3(i - startIndex, 0, 0); // Arrange along Z-axis
             GameObject issueObj = Instantiate(issuePrefab, position, Quaternion.identity);
             issueObj.name = issue.title;
 

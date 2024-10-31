@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     public MemberSpawn memberSpawn;  // Reference to the MemberSpawn
     public BranchSpawn branchSpawn;  // Reference to the BranchSpawn
     public IssueSpawn issueSpawn;  // Reference to the IssueSpawn
+    public PullRequestSpawn pullRequestSpawn;  // Reference to the PullRequestSpawn
 
     void Start()
     {
@@ -53,6 +54,7 @@ public class MainMenu : MonoBehaviour
         memberSpawn.LoadDataFromJSON();
         branchSpawn.LoadDataFromJSON();
         issueSpawn.LoadDataFromJSON();
+        pullRequestSpawn.LoadDataFromJSON();
     }
 
     void OnExitClicked()
