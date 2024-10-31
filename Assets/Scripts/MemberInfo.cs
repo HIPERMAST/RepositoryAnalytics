@@ -21,7 +21,8 @@ public class MemberInfo : MonoBehaviour
     {
         Debug.Log($"Member Info:\n" +
                   $"Login: {memberData.login}\n" +
-                  $"ID: {memberData.id}\n" +
-                  $"Avatar URL: {memberData.avatar_url}");
+                  $"Total Commits: {memberData.total_commits}\n" +
+                  $"Total Additions: {memberData.lines_written}\n" +
+                  $"Total Deletions: {memberData.lines_deleted}");
     }
 }

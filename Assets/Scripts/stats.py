@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta, timezone
 import requests
 import json
 import os
@@ -50,6 +51,20 @@ def get_paginated_data(url, params=None, headers=None):
             url = None
     return data
 
+# Function to check if a branch is active or closed
+def get_branch_status(commit_date_str):
+    THRESHOLD_DAYS = 90  # Define the threshold for "active" status
+
+    # Parse the commit date with timezone awareness
+    commit_date = datetime.fromisoformat(commit_date_str.replace("Z", "+00:00"))
+
+    # Use timezone-aware datetime in UTC
+    current_date = datetime.now(timezone.utc)
+
+    # Determine if the branch is active or closed based on the commit date
+    return "Active" if (current_date - commit_date) <= timedelta(days=THRESHOLD_DAYS) else "Closed"
+
+
 def get_org_profile(organization):
     url = f"{GITHUB_API_URL}/orgs/{organization}"
     response = requests.get(url, headers=HEADERS)
@@ -68,10 +83,38 @@ def get_org_repos(organization):
     repos = get_paginated_data(url)
     return repos
 
+# Function to get all branches of the repository
 def get_repo_branches(owner, repo):
     url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/branches"
     branches = get_paginated_data(url)
-    return branches
+    return get_repo_branches_info(owner, repo, branches)
+
+def get_repo_branches_info(owner, repo, branches):
+    branches_info = []  # Collect information for all branches
+
+    for branch in branches:
+        url = f"https://api.github.com/repos/{owner}/{repo}/branches/{branch['name']}"
+        response = requests.get(url, headers=HEADERS)
+
+        branch_data = response.json()  # Extract JSON response
+
+        # Extract necessary information from the branch data
+        branch_info = {
+            'name': branch_data['name'],
+            'author': branch_data['commit']['commit']['author']['name'],
+            'current_status': get_branch_status(branch_data['commit']['commit']['author']['date']),
+            'commit': {
+                'date': datetime.fromisoformat(
+                    branch_data['commit']['commit']['author']['date'].replace("Z", "+00:00")
+                ).strftime("%Y-%m-%d %H:%M:%S"),  # Format date as string
+                'message': branch_data['commit']['commit']['message'],
+            }
+        }
+
+        branches_info.append(branch_info)  # Collect the branch info
+
+    return branches_info  # Return all collected branch information
+
 
 def get_repo_commits(owner, repo):
     url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/commits"
@@ -89,6 +132,7 @@ def get_repo_pulls(owner, repo):
     params = {"state": "all"}
     pulls = get_paginated_data(url, params)
     return pulls
+
 
 def get_repo_workflows(owner, repo):
     url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/actions/workflows"
@@ -112,13 +156,25 @@ def get_org_projects(organization):
 def get_repo_contributor_stats(owner, repo):
     url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/stats/contributors"
     headers = HEADERS.copy()
-    response = requests.get(url, headers=headers)
-    if response.status_code == 202:
-        return get_repo_contributor_stats(owner, repo)
-    elif response.status_code != 200:
-        print(f"Error al obtener estadísticas de contribuciones: {response.status_code}")
-        return None
-    return response.json()
+    contributorStats = get_paginated_data(url, headers=headers)
+    return process_contributor_stats(contributorStats)
+
+# Extract lines written and deleted from contributor stats
+def process_contributor_stats(contributors):
+    contributors_info = []
+    for contributor in contributors:
+        login = contributor['author']['login']
+        total_commits = contributor['total']
+        lines_written = sum(week['a'] for week in contributor['weeks'])
+        lines_deleted = sum(week['d'] for week in contributor['weeks'])
+
+        contributors_info.append({
+            'login': login,
+            'total_commits': total_commits,
+            'linesWritten': lines_written,
+            'linesDeleted': lines_deleted
+        })
+    return contributors_info
 
 def main():
     data = {}
@@ -142,7 +198,11 @@ def main():
     # Obtener miembros de la organización
     if GITHUB_TOKEN:
         members = get_org_members(ORGANIZATION)
-        data['organization_members'] = [{'login': member['login'], 'id': member['id'], 'avatar_url': member['avatar_url']} for member in members]
+        data['organization_members'] = [{
+            'login': member['login'], 
+            'id': member['id'], 
+            'avatar_url': member['avatar_url']
+        } for member in members]
     else:
         data['organization_members'] = []
 
@@ -170,12 +230,17 @@ def main():
 
     # Obtener ramas del repositorio específico
     branches = get_repo_branches(ORGANIZATION, REPOSITORY)
-    data['branches'] = [branch['name'] for branch in branches]
+    data['branches'] = [{
+        'name': branch['name'],
+        'author': branch['author'],  # Extract author name
+        'current_status': branch['current_status'],  # Extract status
+        'commitDate': branch['commit']['date'],  # Extract commit date
+        'commitMessage': branch['commit']['message']  # Extract commit message
+        } for branch in branches if branch['name'] != 'HEAD']
 
     # Obtener commits del repositorio
     commits = get_repo_commits(ORGANIZATION, REPOSITORY)
     data['commits'] = [{
-        'sha': commit['sha'],
         'author': commit['commit']['author']['name'] if commit['commit']['author'] else None,
         'date': commit['commit']['author']['date'] if commit['commit']['author'] else None,
         'message': commit['commit']['message']
@@ -184,32 +249,26 @@ def main():
     # Obtener issues del repositorio, incluyendo etiquetas y asignaciones
     issues = get_repo_issues(ORGANIZATION, REPOSITORY)
     data['issues'] = [{
-        'number': issue['number'],
         'title': issue['title'],
-        'state': issue['state'],
-        'created_at': issue['created_at'],
-        'closed_at': issue.get('closed_at'),
-        'user': issue['user']['login'],
+        'assignees': [assignee['login'] for assignee in issue.get('assignees', [])] or [issue['user']['login']],
         'labels': [label['name'] for label in issue.get('labels', [])],
-        'assignees': [assignee['login'] for assignee in issue.get('assignees', [])]
+        'milestone': issue['milestone']['title'] if issue.get('milestone') else None,
+        'status': issue['state']
     } for issue in issues if 'pull_request' not in issue]
+
 
     # Obtener pull requests del repositorio si hay token
     if GITHUB_TOKEN:
         pulls = get_repo_pulls(ORGANIZATION, REPOSITORY)
         data['pull_requests'] = [{
-            'number': pr['number'],
             'title': pr['title'],
-            'state': pr['state'],
-            'created_at': pr['created_at'],
-            'closed_at': pr.get('closed_at'),
-            'merged_at': pr.get('merged_at'),
-            'user': pr['user']['login'],
-            'labels': [label['name'] for label in pr.get('labels', [])],
-            'assignees': [assignee['login'] for assignee in pr.get('assignees', [])]
+            'assignees': [assignee['login'] for assignee in pr.get('assignees', [])] or [pr['user']['login']],
+            'reviewers': [reviewer['login'] for reviewer in pr.get('requested_reviewers', [])],
+            'status': pr['state']
         } for pr in pulls]
     else:
         data['pull_requests'] = []
+
 
     # Obtener workflows (GitHub Actions) si hay token
     if GITHUB_TOKEN:
@@ -256,13 +315,14 @@ def main():
     # Obtener estadísticas de contribución del repositorio si hay token
     if GITHUB_TOKEN:
         contributor_stats = get_repo_contributor_stats(ORGANIZATION, REPOSITORY)
-        data['contributor_stats'] = [{
-            'author': stat['author']['login'],
-            'total_commits': stat['total'],
-            'weeks': stat['weeks']
-        } for stat in contributor_stats] if contributor_stats else []
+        data['repository_members'] = [{
+            'login': stat['login'],
+            'total_commits': stat['total_commits'],
+            'lines_written': stat['linesWritten'],
+            'lines_deleted': stat['linesDeleted']
+        } for stat in contributor_stats]
     else:
-        data['contributor_stats'] = []
+        data['repository_members'] = []
 
     # Save the data in the StreamingAssets folder
     save_path = os.path.join('Assets', 'Stats', 'stats.json')

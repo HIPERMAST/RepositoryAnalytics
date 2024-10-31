@@ -25,7 +25,7 @@ public class SpawnerScript : MonoBehaviour
 
         string json = File.ReadAllText(path);
         OrganizationData organizationData = JsonConvert.DeserializeObject<OrganizationData>(json);
-        members = organizationData.organization_members;
+        members = organizationData.repository_members;
 
         DisplayPage(0);  // Display the first page
     }
@@ -40,12 +40,10 @@ public class SpawnerScript : MonoBehaviour
         Vector3 startPosition = transform.position;
 
         Debug.Log($"Displaying page {page + 1}/{(members.Count + itemsPerPage - 1) / itemsPerPage}");
-        Debug.Log("Members on this page:");
 
         for (int i = startIndex; i < endIndex; i++)
         {
             var member = members[i];
-            Debug.Log($"- {member.login} (ID: {member.id})");
 
             Vector3 position = startPosition + new Vector3(i - startIndex, 0, 0);
             GameObject cube = Instantiate(cubePrefab, position, Quaternion.identity);
@@ -97,14 +95,15 @@ public class SpawnerScript : MonoBehaviour
     [System.Serializable]
     public class OrganizationData
     {
-        public List<Member> organization_members;
+        public List<Member> repository_members;
     }
 
     [System.Serializable]
     public class Member
     {
         public string login;
-        public int id;
-        public string avatar_url;
+        public int total_commits;
+        public int lines_written;
+        public int lines_deleted;
     }
 }
