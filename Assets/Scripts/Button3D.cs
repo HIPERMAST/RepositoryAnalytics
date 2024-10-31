@@ -1,12 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Button3D : MonoBehaviour
 {
-    public MemberSpawn memberSpawn; // Reference to the MemberSpawn
+    public MonoBehaviour paginatableObject; // Reference to any MonoBehaviour that implements IPaginatable
+    private IPaginatable paginatable;       // Interface reference for pagination
 
-    // Update is called once per frame
+    void Start()
+    {
+        // Check if the assigned object implements IPaginatable
+        if (paginatableObject is IPaginatable)
+        {
+            paginatable = (IPaginatable)paginatableObject;
+        }
+        else
+        {
+            Debug.LogError("Assigned object does not implement IPaginatable interface.");
+        }
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) // Detect left mouse click
@@ -29,13 +40,15 @@ public class Button3D : MonoBehaviour
     // Function called when the 3D button is clicked
     private void OnButtonClick()
     {
+        if (paginatable == null) return;
+
         if (gameObject.name == "NextButton")
         {
-            memberSpawn.NextPage();
+            paginatable.NextPage();
         }
         else if (gameObject.name == "PreviousButton")
         {
-            memberSpawn.PreviousPage();
+            paginatable.PreviousPage();
         }
     }
 }

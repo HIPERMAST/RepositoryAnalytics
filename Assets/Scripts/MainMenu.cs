@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public Button exitButton;  // Exit Button
     public GameObject mainMenuUI;  // The Main Menu UI (Canvas or Panel)
     public MemberSpawn memberSpawn;  // Reference to the MemberSpawn
+    public BranchSpawn branchSpawn;  // Reference to the BranchSpawn
 
     void Start()
     {
@@ -49,6 +50,7 @@ public class MainMenu : MonoBehaviour
         // Run the Python script and load data
         PythonRunner.RunPythonScript(orgName, repoName, githubToken);
         memberSpawn.LoadDataFromJSON();
+        branchSpawn.LoadDataFromJSON();
     }
 
     void OnExitClicked()

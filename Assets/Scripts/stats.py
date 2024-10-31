@@ -62,7 +62,7 @@ def get_branch_status(commit_date_str):
     current_date = datetime.now(timezone.utc)
 
     # Determine if the branch is active or closed based on the commit date
-    return "Active" if (current_date - commit_date) <= timedelta(days=THRESHOLD_DAYS) else "Closed"
+    return "Active" if (current_date - commit_date) <= timedelta(days=THRESHOLD_DAYS) else "Inactive"
 
 
 def get_org_profile(organization):
@@ -234,8 +234,8 @@ def main():
         'name': branch['name'],
         'author': branch['author'],  # Extract author name
         'current_status': branch['current_status'],  # Extract status
-        'commitDate': branch['commit']['date'],  # Extract commit date
-        'commitMessage': branch['commit']['message']  # Extract commit message
+        'commit_date': branch['commit']['date'],  # Extract commit date
+        'commit_message': branch['commit']['message']  # Extract commit message
         } for branch in branches if branch['name'] != 'HEAD']
 
     # Obtener commits del repositorio

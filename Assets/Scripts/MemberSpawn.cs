@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
-public class MemberSpawn : MonoBehaviour
+public class MemberSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable interface
 {
-    public GameObject cubePrefab;
-    public Text loginText;
-    public Text totalCommitsText;
-    public Text linesWrittenText;
-    public Text linesDeletedText;
+    public GameObject cubePrefab;               // Prefab for member cube
+    public Text loginText;                     // UI Text to show member login
+    public Text totalCommitsText;             // UI Text to show total commits
+    public Text linesWrittenText;           // UI Text to show lines written
+    public Text linesDeletedText;         // UI Text to show lines deleted
 
     private List<Member> members = new List<Member>();
     private List<GameObject> spawnedCubes = new List<GameObject>();
@@ -82,7 +82,7 @@ public class MemberSpawn : MonoBehaviour
         linesDeletedText.text = "";
     }
 
-        public void NextPage()
+    public void NextPage()
     {
         if ((currentPage + 1) * itemsPerPage < members.Count)
         {

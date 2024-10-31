@@ -106,100 +106,100 @@
         {
             "name": "DataFix2",
             "author": "danielfgmb",
-            "current_status": "Closed",
-            "commitDate": "2023-10-04 04:31:06",
-            "commitMessage": "SearchView Final"
+            "current_status": "Inactive",
+            "commit_date": "2023-10-04 04:31:06",
+            "commit_message": "SearchView Final"
         },
         {
             "name": "Develop",
             "author": "Daniel Bernal",
-            "current_status": "Closed",
-            "commitDate": "2023-12-04 09:54:31",
-            "commitMessage": "Eventual Connectivity & new MultiThreading strategies implemented"
+            "current_status": "Inactive",
+            "commit_date": "2023-12-04 09:54:31",
+            "commit_message": "Eventual Connectivity & new MultiThreading strategies implemented"
         },
         {
             "name": "Develop2",
             "author": "danielfgmb",
-            "current_status": "Closed",
-            "commitDate": "2023-12-19 21:38:09",
-            "commitMessage": "Final One\n\nxd"
+            "current_status": "Inactive",
+            "commit_date": "2023-12-19 21:38:09",
+            "commit_message": "Final One\n\nxd"
         },
         {
             "name": "Develop3",
             "author": "danielfgmb",
-            "current_status": "Closed",
-            "commitDate": "2023-12-02 15:06:40",
-            "commitMessage": "Merge branch 'Develop' into Develop3"
+            "current_status": "Inactive",
+            "commit_date": "2023-12-02 15:06:40",
+            "commit_message": "Merge branch 'Develop' into Develop3"
         },
         {
             "name": "DishView",
             "author": "Juan Pablo Martinez Pineda",
-            "current_status": "Closed",
-            "commitDate": "2023-12-02 12:28:59",
-            "commitMessage": "Account view finished and LruCache in Account ViewModel"
+            "current_status": "Inactive",
+            "commit_date": "2023-12-02 12:28:59",
+            "commit_message": "Account view finished and LruCache in Account ViewModel"
         },
         {
             "name": "FilterView",
             "author": "danielfgmb",
-            "current_status": "Closed",
-            "commitDate": "2023-09-23 09:37:20",
-            "commitMessage": "Cambios personales\n\nxd"
+            "current_status": "Inactive",
+            "commit_date": "2023-09-23 09:37:20",
+            "commit_message": "Cambios personales\n\nxd"
         },
         {
             "name": "HomeView2",
             "author": "danielfgmb",
-            "current_status": "Closed",
-            "commitDate": "2023-10-03 20:57:13",
-            "commitMessage": "Including Dishes Model, DTO, and Update Home"
+            "current_status": "Inactive",
+            "commit_date": "2023-10-03 20:57:13",
+            "commit_message": "Including Dishes Model, DTO, and Update Home"
         },
         {
             "name": "LoginView",
             "author": "Daniel Bernal",
-            "current_status": "Closed",
-            "commitDate": "2023-10-02 07:49:33",
-            "commitMessage": "Add Compose Functionality to LoginView"
+            "current_status": "Inactive",
+            "commit_date": "2023-10-02 07:49:33",
+            "commit_message": "Add Compose Functionality to LoginView"
         },
         {
             "name": "Model",
             "author": "Daniel Bernal",
-            "current_status": "Closed",
-            "commitDate": "2023-10-03 08:17:19",
-            "commitMessage": "Model try"
+            "current_status": "Inactive",
+            "commit_date": "2023-10-03 08:17:19",
+            "commit_message": "Model try"
         },
         {
             "name": "ProductOfferView",
             "author": "Daniel Bernal",
-            "current_status": "Closed",
-            "commitDate": "2023-09-23 07:07:35",
-            "commitMessage": "ProductOfferView Finished"
+            "current_status": "Inactive",
+            "commit_date": "2023-09-23 07:07:35",
+            "commit_message": "ProductOfferView Finished"
         },
         {
             "name": "RestaurantView",
             "author": "Juan Pablo Martinez",
-            "current_status": "Closed",
-            "commitDate": "2023-09-23 09:57:28",
-            "commitMessage": "Merge branch 'main' into RestaurantView"
+            "current_status": "Inactive",
+            "commit_date": "2023-09-23 09:57:28",
+            "commit_message": "Merge branch 'main' into RestaurantView"
         },
         {
             "name": "RestaurantView2",
             "author": "Juan Pablo Martinez",
-            "current_status": "Closed",
-            "commitDate": "2023-10-03 22:09:32",
-            "commitMessage": "Merge branch 'Develop' into RestaurantView2"
+            "current_status": "Inactive",
+            "commit_date": "2023-10-03 22:09:32",
+            "commit_message": "Merge branch 'Develop' into RestaurantView2"
         },
         {
             "name": "Sprint4",
             "author": "Daniel Bernal",
-            "current_status": "Closed",
-            "commitDate": "2023-12-04 06:06:22",
-            "commitMessage": "Merge branch 'main' into Sprint4"
+            "current_status": "Inactive",
+            "commit_date": "2023-12-04 06:06:22",
+            "commit_message": "Merge branch 'main' into Sprint4"
         },
         {
             "name": "main",
             "author": "Juan Pablo Martinez",
-            "current_status": "Closed",
-            "commitDate": "2023-12-05 05:25:49",
-            "commitMessage": "Merge pull request #44 from ISIS3510Team35/Develop2\n\nAdd Views and Features"
+            "current_status": "Inactive",
+            "commit_date": "2023-12-05 05:25:49",
+            "commit_message": "Merge pull request #44 from ISIS3510Team35/Develop2\n\nAdd Views and Features"
         }
     ],
     "commits": [
