@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Button3D : MonoBehaviour
 {
-    public SpawnerScript spawnerScript; // Reference to the SpawnerScript
+    public MemberSpawn memberSpawn; // Reference to the MemberSpawn
 
     // Update is called once per frame
     void Update()
@@ -31,11 +31,11 @@ public class Button3D : MonoBehaviour
     {
         if (gameObject.name == "NextButton")
         {
-            spawnerScript.NextPage();
+            memberSpawn.NextPage();
         }
         else if (gameObject.name == "PreviousButton")
         {
-            spawnerScript.PreviousPage();
+            memberSpawn.PreviousPage();
         }
     }
 }

@@ -1,18 +1,21 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
-public class SpawnerScript : MonoBehaviour
+public class MemberSpawn : MonoBehaviour
 {
     public GameObject cubePrefab;
+    public Text loginText;
+    public Text totalCommitsText;
+    public Text linesWrittenText;
+    public Text linesDeletedText;
+
     private List<Member> members = new List<Member>();
-
-    private int currentPage = 0;  // Track the current page
-    private const int itemsPerPage = 5;  // Number of members per page
-
-    // Declare spawnedCubes at the class level
     private List<GameObject> spawnedCubes = new List<GameObject>();
+    private int currentPage = 0;
+    private const int itemsPerPage = 5;
 
     public void LoadDataFromJSON()
     {
@@ -27,33 +30,30 @@ public class SpawnerScript : MonoBehaviour
         OrganizationData organizationData = JsonConvert.DeserializeObject<OrganizationData>(json);
         members = organizationData.repository_members;
 
-        DisplayPage(0);  // Display the first page
+        DisplayPage(0);
+        ClearUI();  // Initially clear UI
     }
 
     void DisplayPage(int page)
     {
-        ClearPreviousCubes();  // Clear old cubes
+        ClearPreviousCubes();
 
         int startIndex = page * itemsPerPage;
         int endIndex = Mathf.Min(startIndex + itemsPerPage, members.Count);
-
         Vector3 startPosition = transform.position;
-
-        Debug.Log($"Displaying page {page + 1}/{(members.Count + itemsPerPage - 1) / itemsPerPage}");
 
         for (int i = startIndex; i < endIndex; i++)
         {
             var member = members[i];
-
             Vector3 position = startPosition + new Vector3(i - startIndex, 0, 0);
             GameObject cube = Instantiate(cubePrefab, position, Quaternion.identity);
             cube.name = member.login;
 
-            // Attach the MemberInfo script and set the member data
+            // Attach MemberInfo script and set member data
             var memberInfo = cube.AddComponent<MemberInfo>();
-            memberInfo.SetMemberData(member);
+            memberInfo.SetMemberData(member, this);  // Pass reference to SpawnerScript
 
-            spawnedCubes.Add(cube);  // Track the spawned cube
+            spawnedCubes.Add(cube);
         }
     }
 
@@ -61,12 +61,28 @@ public class SpawnerScript : MonoBehaviour
     {
         foreach (var cube in spawnedCubes)
         {
-            Destroy(cube);  // Destroy each spawned cube
+            Destroy(cube);
         }
-        spawnedCubes.Clear();  // Clear the list of spawned cubes
+        spawnedCubes.Clear();
     }
 
-    public void NextPage()
+    public void DisplayMemberInfo(Member member)
+    {
+        loginText.text = member.login;
+        totalCommitsText.text = "Total Commits:\n" + member.total_commits;
+        linesWrittenText.text = "Lines Additions:\n" + member.lines_written;
+        linesDeletedText.text = "Lines Deletions:\n" + member.lines_deleted;
+    }
+
+    public void ClearUI()
+    {
+        loginText.text = "";
+        totalCommitsText.text = "";
+        linesWrittenText.text = "";
+        linesDeletedText.text = "";
+    }
+
+        public void NextPage()
     {
         if ((currentPage + 1) * itemsPerPage < members.Count)
         {
@@ -102,8 +118,8 @@ public class SpawnerScript : MonoBehaviour
     public class Member
     {
         public string login;
-        public int total_commits;
-        public int lines_written;
-        public int lines_deleted;
+        public string total_commits;
+        public string lines_written;
+        public string lines_deleted;
     }
 }
