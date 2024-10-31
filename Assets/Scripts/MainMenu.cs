@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenuUI;  // The Main Menu UI (Canvas or Panel)
     public MemberSpawn memberSpawn;  // Reference to the MemberSpawn
     public BranchSpawn branchSpawn;  // Reference to the BranchSpawn
+    public IssueSpawn issueSpawn;  // Reference to the IssueSpawn
 
     void Start()
     {
@@ -51,6 +52,7 @@ public class MainMenu : MonoBehaviour
         PythonRunner.RunPythonScript(orgName, repoName, githubToken);
         memberSpawn.LoadDataFromJSON();
         branchSpawn.LoadDataFromJSON();
+        issueSpawn.LoadDataFromJSON();
     }
 
     void OnExitClicked()
