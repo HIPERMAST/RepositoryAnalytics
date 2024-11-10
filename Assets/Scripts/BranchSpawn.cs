@@ -11,12 +11,13 @@ public class BranchSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable
     public Text authorText;                      // UI Text to show branch author
     public Text currentStatusText;               // UI Text to show branch status
     public Text lastCommitDateText;              // UI Text to show last commit date
-    //public Text commitMessageText;               // UI Text to show commit message
+    //public Text commitMessageText;             // Uncomment if commit message display is needed
 
     private List<Branch> branches = new List<Branch>();   // List to store loaded branches
     private List<GameObject> spawnedCubes = new List<GameObject>(); // List to track instantiated cubes
     private int currentPage = 0;
     private const int itemsPerPage = 5;
+    private float itemSpacing = 2.0f;            // Spacing between items
 
     public void LoadDataFromJSON()
     {
@@ -41,13 +42,16 @@ public class BranchSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable
 
         int startIndex = page * itemsPerPage;
         int endIndex = Mathf.Min(startIndex + itemsPerPage, branches.Count);
-        Vector3 startPosition = transform.position;
+        int itemsOnPage = endIndex - startIndex;
+
+        // Calculate the starting position for centering the items along the Z-axis
+        float startZPosition = transform.position.z - (itemsOnPage - 1) * itemSpacing / 2;
 
         for (int i = startIndex; i < endIndex; i++)
         {
             var branch = branches[i];
-            Vector3 position = startPosition + new Vector3(0, 0, i - startIndex); // Increment along Z-axis
-            GameObject cube = Instantiate(cubePrefab, position, Quaternion.identity);
+            Vector3 position = new Vector3(transform.position.x, transform.position.y, startZPosition + (i - startIndex) * itemSpacing);
+            GameObject cube = Instantiate(cubePrefab, position, Quaternion.Euler(0, -90, 0)); // Rotate -90 on Y-axis
             cube.name = branch.name;
 
             // Attach BranchInfo script and set branch data
@@ -73,7 +77,7 @@ public class BranchSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable
         authorText.text = "Author: " + branch.author;
         currentStatusText.text = "Status: " + branch.current_status;
         lastCommitDateText.text = "Last Commit Date: " + branch.commit_date;
-        //commitMessageText.text = "Commit Message: " + branch.commit_message;
+        //commitMessageText.text = "Commit Message: " + branch.commit_message; // Uncomment if needed
     }
 
     public void ClearUI()
@@ -82,7 +86,7 @@ public class BranchSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable
         authorText.text = "";
         currentStatusText.text = "";
         lastCommitDateText.text = "";
-        //commitMessageText.text = "";
+        //commitMessageText.text = ""; // Uncomment if needed
     }
 
     public void NextPage()

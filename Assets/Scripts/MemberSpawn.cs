@@ -7,15 +7,16 @@ using Newtonsoft.Json;
 public class MemberSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable interface
 {
     public GameObject cubePrefab;               // Prefab for member cube
-    public Text loginText;                     // UI Text to show member login
-    public Text totalCommitsText;             // UI Text to show total commits
-    public Text linesWrittenText;           // UI Text to show lines written
-    public Text linesDeletedText;         // UI Text to show lines deleted
+    public Text loginText;                      // UI Text to show member login
+    public Text totalCommitsText;               // UI Text to show total commits
+    public Text linesWrittenText;               // UI Text to show lines written
+    public Text linesDeletedText;               // UI Text to show lines deleted
 
     private List<Member> members = new List<Member>();
     private List<GameObject> spawnedCubes = new List<GameObject>();
     private int currentPage = 0;
     private const int itemsPerPage = 5;
+    private float itemSpacing = 2.0f;           // Spacing between items
 
     public void LoadDataFromJSON()
     {
@@ -40,18 +41,21 @@ public class MemberSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable
 
         int startIndex = page * itemsPerPage;
         int endIndex = Mathf.Min(startIndex + itemsPerPage, members.Count);
-        Vector3 startPosition = transform.position;
+        int itemsOnPage = endIndex - startIndex;
+
+        // Calculate the starting position for centering the items
+        float startXPosition = transform.position.x - (itemsOnPage - 1) * itemSpacing / 2;
 
         for (int i = startIndex; i < endIndex; i++)
         {
             var member = members[i];
-            Vector3 position = startPosition + new Vector3(i - startIndex, 0, 0);
-            GameObject cube = Instantiate(cubePrefab, position, Quaternion.identity);
+            Vector3 position = new Vector3(startXPosition + (i - startIndex) * itemSpacing, transform.position.y, transform.position.z);
+            GameObject cube = Instantiate(cubePrefab, position, Quaternion.identity); // No rotation applied
             cube.name = member.login;
 
             // Attach MemberInfo script and set member data
             var memberInfo = cube.AddComponent<MemberInfo>();
-            memberInfo.SetMemberData(member, this);  // Pass reference to SpawnerScript
+            memberInfo.SetMemberData(member, this);  // Pass reference to MemberSpawn
 
             spawnedCubes.Add(cube);
         }
@@ -68,7 +72,7 @@ public class MemberSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable
 
     public void DisplayMemberInfo(Member member)
     {
-        loginText.text = member.login;
+        loginText.text = "Login: " + member.login;
         totalCommitsText.text = "Total Commits:\n" + member.total_commits;
         linesWrittenText.text = "Lines Additions:\n" + member.lines_written;
         linesDeletedText.text = "Lines Deletions:\n" + member.lines_deleted;

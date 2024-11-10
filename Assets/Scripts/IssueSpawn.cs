@@ -6,16 +6,17 @@ using Newtonsoft.Json;
 
 public class IssueSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable interface
 {
-    public GameObject issuePrefab;  // Prefab for each issue object
-    public Text titleText;
-    public Text statusText;
-    public Text assigneesText;
-    public Text milestoneText;
+    public GameObject issuePrefab;           // Prefab for each issue object
+    public Text titleText;                   // UI Text for issue title
+    public Text statusText;                  // UI Text for issue status
+    public Text assigneesText;               // UI Text for issue assignees
+    public Text milestoneText;               // UI Text for issue milestone
 
-    private List<Issue> issues = new List<Issue>();
-    private List<GameObject> spawnedIssues = new List<GameObject>();
+    private List<Issue> issues = new List<Issue>();               // List to store loaded issues
+    private List<GameObject> spawnedIssues = new List<GameObject>(); // List to track instantiated issues
     private int currentPage = 0;
     private const int itemsPerPage = 5;
+    private float itemSpacing = 2.0f;                            // Spacing between items
 
     public void LoadDataFromJSON()
     {
@@ -40,13 +41,16 @@ public class IssueSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable 
 
         int startIndex = page * itemsPerPage;
         int endIndex = Mathf.Min(startIndex + itemsPerPage, issues.Count);
-        Vector3 startPosition = transform.position;
+        int itemsOnPage = endIndex - startIndex;
+
+        // Calculate the starting position for centering the items
+        float startXPosition = transform.position.x - (itemsOnPage - 1) * itemSpacing / 2;
 
         for (int i = startIndex; i < endIndex; i++)
         {
             var issue = issues[i];
-            Vector3 position = startPosition + new Vector3(i - startIndex, 0, 0); // Arrange along Z-axis
-            GameObject issueObj = Instantiate(issuePrefab, position, Quaternion.identity);
+            Vector3 position = new Vector3(startXPosition + (i - startIndex) * itemSpacing, transform.position.y, transform.position.z);
+            GameObject issueObj = Instantiate(issuePrefab, position, Quaternion.identity); // No rotation applied
             issueObj.name = issue.title;
 
             // Attach IssueInfo script and set issue data
@@ -72,9 +76,9 @@ public class IssueSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable 
         statusText.text = "Status: " + issue.status;
 
         // Display assignees as a comma-separated list
-        assigneesText.text = "Assignees: " + string.Join(", ", issue.assignees);
+        assigneesText.text = "Assignees: " + (issue.assignees != null ? string.Join(", ", issue.assignees) : "None");
         
-        milestoneText.text = "Milestone: " + issue.milestone;
+        milestoneText.text = "Milestone: " + (string.IsNullOrEmpty(issue.milestone) ? "None" : issue.milestone);
     }
 
     public void ClearUI()
@@ -118,12 +122,11 @@ public class IssueSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable 
     }
 
     [System.Serializable]
-    
     public class Issue
     {
         public string title;
         public string status;
-        public List<string> assignees; // Changed to a list of strings to handle array in JSON
+        public List<string> assignees; // List to handle multiple assignees
         public string milestone;
     }
 }

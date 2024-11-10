@@ -16,6 +16,7 @@ public class PullRequestSpawn : MonoBehaviour, IPaginatable // Implement IPagina
     private List<GameObject> spawnedPullRequests = new List<GameObject>();
     private int currentPage = 0;
     private const int itemsPerPage = 5;
+    private float itemSpacing = 2.0f;          // Spacing between items
 
     public void LoadDataFromJSON()
     {
@@ -40,13 +41,16 @@ public class PullRequestSpawn : MonoBehaviour, IPaginatable // Implement IPagina
 
         int startIndex = page * itemsPerPage;
         int endIndex = Mathf.Min(startIndex + itemsPerPage, pullRequests.Count);
-        Vector3 startPosition = transform.position;
+        int itemsOnPage = endIndex - startIndex;
+
+        // Calculate the starting position for centering along the Z-axis
+        float startZPosition = transform.position.z - (itemsOnPage - 1) * itemSpacing / 2;
 
         for (int i = startIndex; i < endIndex; i++)
         {
             var pullRequest = pullRequests[i];
-            Vector3 position = startPosition + new Vector3(0, 0, i - startIndex); // Arrange along Z-axis
-            GameObject pullRequestObj = Instantiate(pullRequestPrefab, position, Quaternion.identity);
+            Vector3 position = new Vector3(transform.position.x, transform.position.y, startZPosition + (i - startIndex) * itemSpacing);
+            GameObject pullRequestObj = Instantiate(pullRequestPrefab, position, Quaternion.Euler(0, -90, 0)); // Rotate -90 on Y-axis
             pullRequestObj.name = pullRequest.title;
 
             // Attach PullRequestInfo script and set pull request data
