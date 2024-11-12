@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using System.Collections;
 
 public class IssueSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable interface
 {
@@ -11,6 +12,7 @@ public class IssueSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable 
     public Text statusText;                  // UI Text for issue status
     public Text assigneesText;               // UI Text for issue assignees
     public Text milestoneText;               // UI Text for issue milestone
+    public float slideDuration = 0.5f;       // Duration for sliding animation
 
     private List<Issue> issues = new List<Issue>();               // List to store loaded issues
     private List<GameObject> spawnedIssues = new List<GameObject>(); // List to track instantiated issues
@@ -37,6 +39,15 @@ public class IssueSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable 
 
     void DisplayPage(int page)
     {
+        StartCoroutine(AnimatePageChange(page));
+    }
+
+    IEnumerator AnimatePageChange(int page)
+    {
+        // Animate existing issues sliding out to the left
+        yield return StartCoroutine(SlideOutIssues());
+
+        // Clear previous issues after sliding out
         ClearPreviousIssues();
 
         int startIndex = page * itemsPerPage;
@@ -49,8 +60,8 @@ public class IssueSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable 
         for (int i = startIndex; i < endIndex; i++)
         {
             var issue = issues[i];
-            Vector3 position = new Vector3(startXPosition + (i - startIndex) * itemSpacing, transform.position.y, transform.position.z);
-            GameObject issueObj = Instantiate(issuePrefab, position, Quaternion.identity); // No rotation applied
+            Vector3 targetPosition = new Vector3(startXPosition + (i - startIndex) * itemSpacing, transform.position.y, transform.position.z);
+            GameObject issueObj = Instantiate(issuePrefab, targetPosition + Vector3.right * 15, Quaternion.identity); // Start off-screen to the right
             issueObj.name = issue.title;
 
             // Attach IssueInfo script and set issue data
@@ -58,7 +69,43 @@ public class IssueSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable 
             issueInfo.SetIssueData(issue, this);  // Pass reference to IssueSpawn
 
             spawnedIssues.Add(issueObj);
+
+            // Animate each issue sliding in
+            StartCoroutine(SlideInIssue(issueObj, targetPosition));
         }
+    }
+
+    IEnumerator SlideOutIssues()
+    {
+        foreach (var issueObj in spawnedIssues)
+        {
+            Vector3 targetPosition = issueObj.transform.position + Vector3.left * 15; // Move 5 units to the left
+            float elapsedTime = 0;
+
+            while (elapsedTime < slideDuration)
+            {
+                issueObj.transform.position = Vector3.Lerp(issueObj.transform.position, targetPosition, elapsedTime / slideDuration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            issueObj.transform.position = targetPosition;
+        }
+    }
+
+    IEnumerator SlideInIssue(GameObject issueObj, Vector3 targetPosition)
+    {
+        float elapsedTime = 0;
+        Vector3 startPosition = issueObj.transform.position;
+
+        while (elapsedTime < slideDuration)
+        {
+            issueObj.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / slideDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        issueObj.transform.position = targetPosition;
     }
 
     void ClearPreviousIssues()

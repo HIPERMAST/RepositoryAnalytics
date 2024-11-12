@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using System.Collections;
 
 public class MemberSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable interface
 {
@@ -11,6 +12,7 @@ public class MemberSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable
     public Text totalCommitsText;               // UI Text to show total commits
     public Text linesWrittenText;               // UI Text to show lines written
     public Text linesDeletedText;               // UI Text to show lines deleted
+    public float slideDuration = 0.5f;          // Duration for sliding animation
 
     private List<Member> members = new List<Member>();
     private List<GameObject> spawnedCubes = new List<GameObject>();
@@ -37,6 +39,15 @@ public class MemberSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable
 
     void DisplayPage(int page)
     {
+        StartCoroutine(AnimatePageChange(page));
+    }
+
+    IEnumerator AnimatePageChange(int page)
+    {
+        // Animate existing cubes sliding out to the left
+        yield return StartCoroutine(SlideOutCubes());
+
+        // Clear previous cubes after sliding out
         ClearPreviousCubes();
 
         int startIndex = page * itemsPerPage;
@@ -49,8 +60,8 @@ public class MemberSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable
         for (int i = startIndex; i < endIndex; i++)
         {
             var member = members[i];
-            Vector3 position = new Vector3(startXPosition + (i - startIndex) * itemSpacing, transform.position.y, transform.position.z);
-            GameObject cube = Instantiate(cubePrefab, position, Quaternion.identity); // No rotation applied
+            Vector3 targetPosition = new Vector3(startXPosition + (i - startIndex) * itemSpacing, transform.position.y, transform.position.z);
+            GameObject cube = Instantiate(cubePrefab, targetPosition + Vector3.left * 15, Quaternion.identity); // Start off-screen to the right
             cube.name = member.login;
 
             // Attach MemberInfo script and set member data
@@ -58,7 +69,43 @@ public class MemberSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable
             memberInfo.SetMemberData(member, this);  // Pass reference to MemberSpawn
 
             spawnedCubes.Add(cube);
+
+            // Animate each cube sliding in
+            StartCoroutine(SlideInCube(cube, targetPosition));
         }
+    }
+
+    IEnumerator SlideOutCubes()
+    {
+        foreach (var cube in spawnedCubes)
+        {
+            Vector3 targetPosition = cube.transform.position + Vector3.right * 15; // Move 5 units to the left
+            float elapsedTime = 0;
+
+            while (elapsedTime < slideDuration)
+            {
+                cube.transform.position = Vector3.Lerp(cube.transform.position, targetPosition, elapsedTime / slideDuration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            cube.transform.position = targetPosition;
+        }
+    }
+
+    IEnumerator SlideInCube(GameObject cube, Vector3 targetPosition)
+    {
+        float elapsedTime = 0;
+        Vector3 startPosition = cube.transform.position;
+
+        while (elapsedTime < slideDuration)
+        {
+            cube.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / slideDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        cube.transform.position = targetPosition;
     }
 
     void ClearPreviousCubes()

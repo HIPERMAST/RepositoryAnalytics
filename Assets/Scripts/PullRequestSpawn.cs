@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using System.Collections;
 
 public class PullRequestSpawn : MonoBehaviour, IPaginatable // Implement IPaginatable interface
 {
@@ -11,6 +12,7 @@ public class PullRequestSpawn : MonoBehaviour, IPaginatable // Implement IPagina
     public Text assigneesText;                 // UI Text to show pull request assignees
     public Text reviewersText;                 // UI Text to show pull request reviewers
     public Text statusText;                    // UI Text to show pull request status
+    public float slideDuration = 0.5f;         // Duration for sliding animation
 
     private List<PullRequest> pullRequests = new List<PullRequest>();
     private List<GameObject> spawnedPullRequests = new List<GameObject>();
@@ -37,6 +39,15 @@ public class PullRequestSpawn : MonoBehaviour, IPaginatable // Implement IPagina
 
     void DisplayPage(int page)
     {
+        StartCoroutine(AnimatePageChange(page));
+    }
+
+    IEnumerator AnimatePageChange(int page)
+    {
+        // Animate existing pull request objects sliding out to the left
+        yield return StartCoroutine(SlideOutPullRequests());
+
+        // Clear previous pull requests after sliding out
         ClearPreviousPullRequests();
 
         int startIndex = page * itemsPerPage;
@@ -49,8 +60,8 @@ public class PullRequestSpawn : MonoBehaviour, IPaginatable // Implement IPagina
         for (int i = startIndex; i < endIndex; i++)
         {
             var pullRequest = pullRequests[i];
-            Vector3 position = new Vector3(transform.position.x, transform.position.y, startZPosition + (i - startIndex) * itemSpacing);
-            GameObject pullRequestObj = Instantiate(pullRequestPrefab, position, Quaternion.Euler(0, -90, 0)); // Rotate -90 on Y-axis
+            Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y, startZPosition + (i - startIndex) * itemSpacing);
+            GameObject pullRequestObj = Instantiate(pullRequestPrefab, targetPosition + Vector3.forward * 15, Quaternion.Euler(0, -90, 0)); // Start off-screen to the right
             pullRequestObj.name = pullRequest.title;
 
             // Attach PullRequestInfo script and set pull request data
@@ -58,7 +69,43 @@ public class PullRequestSpawn : MonoBehaviour, IPaginatable // Implement IPagina
             pullRequestInfo.SetPullRequestData(pullRequest, this);  // Pass reference to PullRequestSpawn
 
             spawnedPullRequests.Add(pullRequestObj);
+
+            // Animate each pull request sliding in
+            StartCoroutine(SlideInPullRequest(pullRequestObj, targetPosition));
         }
+    }
+
+    IEnumerator SlideOutPullRequests()
+    {
+        foreach (var pullRequestObj in spawnedPullRequests)
+        {
+            Vector3 targetPosition = pullRequestObj.transform.position + Vector3.back * 15; // Move 5 units to the left
+            float elapsedTime = 0;
+
+            while (elapsedTime < slideDuration)
+            {
+                pullRequestObj.transform.position = Vector3.Lerp(pullRequestObj.transform.position, targetPosition, elapsedTime / slideDuration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            pullRequestObj.transform.position = targetPosition;
+        }
+    }
+
+    IEnumerator SlideInPullRequest(GameObject pullRequestObj, Vector3 targetPosition)
+    {
+        float elapsedTime = 0;
+        Vector3 startPosition = pullRequestObj.transform.position;
+
+        while (elapsedTime < slideDuration)
+        {
+            pullRequestObj.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / slideDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        pullRequestObj.transform.position = targetPosition;
     }
 
     void ClearPreviousPullRequests()
