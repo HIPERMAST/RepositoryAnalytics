@@ -1,0 +1,2 @@
+D:\Daniel\UNIANDES\8. SEMESTRE\PROYECTO DE GRADO\RepositoryAnalytics\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+D:\Daniel\UNIANDES\8. SEMESTRE\PROYECTO DE GRADO\RepositoryAnalytics\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

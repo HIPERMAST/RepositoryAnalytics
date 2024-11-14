@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Button3D : MonoBehaviour
 {
     public MonoBehaviour paginatableObject; // Reference to any MonoBehaviour that implements IPaginatable
     private IPaginatable paginatable;       // Interface reference for pagination
 
-    void Start()
+    private void Start()
     {
         // Check if the assigned object implements IPaginatable
         if (paginatableObject is IPaginatable)
@@ -16,28 +17,37 @@ public class Button3D : MonoBehaviour
         {
             Debug.LogError("Assigned object does not implement IPaginatable interface.");
         }
-    }
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0)) // Detect left mouse click
+        // Get the XRBaseInteractable component and add listener for select events
+        var interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable>();
+        if (interactable != null)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                // Check if the object clicked is this button
-                if (hit.transform.gameObject == gameObject)
-                {
-                    Debug.Log($"Button {gameObject.name} clicked!");
-                    OnButtonClick();
-                }
-            }
+            interactable.selectEntered.AddListener(OnSelectEnter);
+        }
+        else
+        {
+            Debug.LogWarning($"XRBaseInteractable component is missing on {gameObject.name}. Please ensure the prefab includes it.");
         }
     }
 
-    // Function called when the 3D button is clicked
+    private void OnDestroy()
+    {
+        // Clean up the listener on destroy
+        var interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable>();
+        if (interactable != null)
+        {
+            interactable.selectEntered.RemoveListener(OnSelectEnter);
+        }
+    }
+
+    // Function called when the VR controller interacts with the 3D button
+    private void OnSelectEnter(SelectEnterEventArgs args)
+    {
+        Debug.Log($"Button {gameObject.name} selected!");
+        OnButtonClick();
+    }
+
+    // Handle button click based on the button's name or intended function
     private void OnButtonClick()
     {
         if (paginatable == null) return;

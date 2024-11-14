@@ -1,0 +1,5 @@
+D:/Daniel/UNIANDES/8. SEMESTRE/PROYECTO DE GRADO/RepositoryAnalytics/.utmp/RelWithDebInfo/273z2r4m/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/Daniel/UNIANDES/8. SEMESTRE/PROYECTO DE GRADO/RepositoryAnalytics/.utmp/RelWithDebInfo/273z2r4m/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/Daniel/UNIANDES/8. SEMESTRE/PROYECTO DE GRADO/RepositoryAnalytics/.utmp/RelWithDebInfo/273z2r4m/arm64-v8a/GameActivity/CMakeFiles/game.dir
+D:/Daniel/UNIANDES/8. SEMESTRE/PROYECTO DE GRADO/RepositoryAnalytics/.utmp/RelWithDebInfo/273z2r4m/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+D:/Daniel/UNIANDES/8. SEMESTRE/PROYECTO DE GRADO/RepositoryAnalytics/.utmp/RelWithDebInfo/273z2r4m/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
