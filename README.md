@@ -22,9 +22,7 @@
 7. [Prefabs and Materials](#prefabs-and-materials)
 8. [API Integration](#api-integration)
 9. [Icons and UI](#icons-and-ui)
-10. [How to Contribute](#how-to-contribute)
-11. [License](#license)
-12. [Additional Documentation](#additional-documentation)
+11. [Additional Documentation](#additional-documentation)
 
 ---
 
