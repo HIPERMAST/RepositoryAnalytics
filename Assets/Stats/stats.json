@@ -1088,24 +1088,5 @@
     "workflows": [],
     "discussions": [],
     "projects": [],
-    "repository_members": [
-        {
-            "login": "HIPERMAST",
-            "total_commits": 19,
-            "lines_written": 7472,
-            "lines_deleted": 3768
-        },
-        {
-            "login": "danielfgmb",
-            "total_commits": 25,
-            "lines_written": 6143,
-            "lines_deleted": 1760
-        },
-        {
-            "login": "JP-514",
-            "total_commits": 27,
-            "lines_written": 3482,
-            "lines_deleted": 1547
-        }
-    ]
+    "repository_members": []
 }
