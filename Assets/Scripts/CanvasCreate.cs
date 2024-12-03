@@ -3,14 +3,14 @@ using TMPro;  // For TextMeshPro
 using UnityEngine.UI;
 using System.IO;
 
-public class MainMenu : MonoBehaviour
+public class CanvasCreate : MonoBehaviour
 {
     public TMP_InputField orgInput;  // Organization Name Input Field
     public TMP_InputField repoInput;  // Repository Name Input Field
     public TMP_InputField tokenInput;  // GitHub Token Input Field
     public Button loadButton;  // Load Data Button
     public Button exitButton;  // Exit Button
-    public GameObject mainMenuUI;  // The Main Menu UI (Canvas or Panel)
+    public GameObject canvasCreate;  // The Main Menu UI (Canvas or Panel)
     public MemberSpawn memberSpawn;  // Reference to the MemberSpawn
     public BranchSpawn branchSpawn;  // Reference to the BranchSpawn
     public IssueSpawn issueSpawn;  // Reference to the IssueSpawn
@@ -32,7 +32,7 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1;
 
         // Hide the main menu UI
-        mainMenuUI.SetActive(false);
+        canvasCreate.SetActive(false);
 
         string orgName = orgInput.text;
         string repoName = repoInput.text;

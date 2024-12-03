@@ -225,7 +225,9 @@ def main():
         'open_issues_count': repo['open_issues_count'],
         'license': repo['license']['name'] if repo['license'] else None,
         'default_branch': repo['default_branch'],
-        'topics': repo.get('topics', [])
+        'topics': repo.get('topics', []),
+        # Add the `selected` key based on the repository name
+        'selected': repo['name'] == REPOSITORY
     } for repo in repos]
 
     # Obtener ramas del repositorio específico
