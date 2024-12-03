@@ -47,20 +47,131 @@ This project is ideal for:
 
 Follow these steps to set up the project:
 
-1. **Clone the repository**:
+### **1. Install Unity**
 
-    ```bash
-    git clone https://github.com/HIPERMAST/RepositoryAnalytics.git
-    cd RepositoryAnalytics
-    ```
+- **Download Unity Hub**:
+    - Go to the [Unity Download Page](https://unity.com/download) and download Unity Hub.
 
-2. **Open in Unity**: Open the project folder in Unity 6.
+- **Install Unity Editor**:
+    - Open Unity Hub and go to the `Installs` tab.
+    - Click `Add` and select **Unity Version 6**. Follow the installation prompts.
 
-3. **Setup GitHub API Token**:
-    - Go to GitHub Developer Settings and generate a new token.
-    - Add this token to the project where the GitHub API is configured in the code.
+- **Add Modules**:
+    - During installation, ensure to include modules such as:
+      - **Windows Build Support** (if using Windows).
+      - **Mac Build Support** (if using macOS).
 
-4. **Run the Project**: In Unity, press `Play` to start the project and explore your repository data in 3D!
+- **Verify Installation**:
+    - After installation, confirm that Unity is properly installed by opening Unity Hub and creating a new project as a test.
+
+### **2. Install Required Dependencies**
+
+To run the project successfully, both Python and Gradle are required. Follow these steps to install and set them up:
+
+#### **Install Python**
+1. **Download Python**:
+   - Visit the [Python official website](https://www.python.org/downloads/).
+   - Download the latest stable version of Python (ensure it's at least Python 3.7).
+
+2. **Install Python**:
+   - Run the downloaded installer.
+   - During installation:
+     - **Check the box** for "Add Python to PATH".
+     - Select "Customize installation" and ensure `pip` is selected.
+
+3. **Verify Installation**:
+   - Open a terminal or command prompt and type:
+     ```bash
+     python --version
+     ```
+     You should see the installed Python version.
+
+4. **Install Required Python Libraries**:
+   - Navigate to the directory where the script is located.
+   - Use `pip` to install the required libraries for the GitHub API script:
+     ```bash
+     pip install requests
+     pip install json
+     ```
+
+5. **Test Python Setup**:
+   - Run a simple script to ensure Python is working:
+     ```bash
+     python -c "print('Python is installed successfully!')"
+     ```
+
+---
+
+#### **Install Gradle**
+1. **Download Gradle**:
+   - Visit the [Gradle official website](https://gradle.org/releases/).
+   - Download the latest **binary-only** distribution (or the compatible version specified by the project).
+
+2. **Install Gradle**:
+   - Extract the downloaded `.zip` file to a directory of your choice (e.g., `C:\Gradle` on Windows or `/opt/gradle` on macOS/Linux).
+   - Add the Gradle `bin` directory to your system's `PATH`:
+     - **Windows**:
+       - Go to `Control Panel > System > Advanced System Settings > Environment Variables`.
+       - Add a new system variable `GRADLE_HOME` pointing to the Gradle installation directory (e.g., `C:\Gradle`).
+       - Edit the `Path` variable and add `%GRADLE_HOME%\bin`.
+     - **macOS/Linux**:
+       - Open your terminal and edit the `~/.bashrc`, `~/.zshrc`, or `~/.bash_profile` file:
+         ```bash
+         export GRADLE_HOME=/opt/gradle
+         export PATH=$GRADLE_HOME/bin:$PATH
+         ```
+       - Save and run `source ~/.bashrc` or `source ~/.zshrc`.
+
+3. **Verify Installation**:
+   - Open a terminal or command prompt and type:
+     ```bash
+     gradle -v
+     ```
+     You should see the installed version of Gradle and system information.
+
+4. **Configure Gradle in the Project**:
+   - Ensure that the `build.gradle` file is present in the project directory.
+   - Open a terminal in the project directory and run:
+     ```bash
+     gradle build
+     ```
+     This will download any required dependencies and build the project.
+
+ ### **3. Setup GitHub API Token (optional)**
+- Go to your GitHub account and navigate to Settings > Developer Settings > Personal Access Tokens.
+- Generate a new token with the required permissions (e.g., repo, read:org).
+- This token will give you more insights about the project.
+
+
+### **4. Clone and Run the Repository**
+
+Follow these steps to clone the project and run it in Unity:
+
+1. **Clone the Repository**:
+   - Open a terminal or command prompt.
+   - Navigate to the directory where you want to store the project.
+   - Run the following command:
+     ```bash
+     git clone https://github.com/HIPERMAST/RepositoryAnalytics.git
+     cd RepositoryAnalytics
+     ```
+
+2. **Open the Project in Unity**:
+   - Launch Unity Hub.
+   - Click `Open` and navigate to the folder where you cloned the repository.
+   - Select the folder to load the project into Unity.
+
+3. **Set Up GitHub API Token**:
+   - Go to your GitHub account:
+     - Navigate to **Settings > Developer Settings > Personal Access Tokens**.
+     - Generate a new token with permissions such as `repo` and `read:org`.
+   - Add the token to the script where the GitHub API is configured. Typically, this will involve replacing a placeholder or updating a configuration file.
+
+4. **Run the Project**:
+   - In Unity, open the main scene file or the specified entry point for the project.
+   - Press the `Play` button in the Unity Editor to start the project.
+   - Interact with the 3D visualization to explore the repository's data.
+  
 
 ---
 
