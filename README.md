@@ -54,12 +54,13 @@ Follow these steps to set up the project:
 
 - **Install Unity Editor**:
     - Open Unity Hub and go to the `Installs` tab.
-    - Click `Add` and select **Unity Version 6**. Follow the installation prompts.
+    - Click `Add` and select **Unity Version 6 LTS**. Follow the installation prompts.
 
 - **Add Modules**:
     - During installation, ensure to include modules such as:
       - **Windows Build Support** (if using Windows).
       - **Mac Build Support** (if using macOS).
+      - **Android Build Support** (if using macOS).
 
 - **Verify Installation**:
     - After installation, confirm that Unity is properly installed by opening Unity Hub and creating a new project as a test.
@@ -227,14 +228,16 @@ Each major folder in `Assets` is structured to keep related components together:
 
 ## Scripts 📜
 
-# GitHubAPIHandler.cs
+# GitHub API Methods
 
 - **Purpose**: Fetches data from GitHub's API and parses it into usable JSON data.
 - **Methods**:
-  -  `GetRepositoryData()`: Fetches general data about the repository.
-  -  `GetIssues()`: Retrieves all issues in the repository.
-  -  `GetPullRequests()`: Retrieves all pull requests in the repository.
-  -  `GetBranches()`: Retrieves all branches in the repository.
+  -  `get_org_profile()`: Fetches general data about the repository.
+  -  `get_org_members()`: Retrieves all issues in the repository.
+  -  `get_org_repos()`: Retrieves all pull requests in the repository.
+  -  `get_repo_branches()`: Retrieves all branches in the repository.
+  -  `get_repo_commits()`:
+  -  `get_repo_issues()`
  
 # Spawner Scripts
 
@@ -244,7 +247,14 @@ Each script handles spawning a specific type of data (branch, issue, member, or 
   - `Purpose`: Each script is responsible for displaying a specific type of GitHub data in the Unity environment.
   - `Animation`: Includes sliding animations for smooth transitions between pages.
   - `Pagination`: Implements pagination for efficient data handling.
- 
+
+# Canvas Scripts
+
+The following scripts manage the UI flow and interactions for displaying GitHub data within the Unity environment:
+
+- `CanvasController.cs`, `CanvasLoadController.cs`, `CanvasCreateController.cs`
+  - `Purpose`: These scripts handle the display and management of GitHub-related data, such as organizations and repositories, within the Unity UI.
+  - `Centralized Canvas Management`: CanvasLoadController.cs handles showing or hiding the appropriate canvas based on the presence of valid repository data in stats.json.
 ---
 
 ## Prefabs and Materials 🎨
@@ -282,6 +292,54 @@ Each script handles spawning a specific type of data (branch, issue, member, or 
   - **Text Fields**: Labels and fields to display details about each GitHub entity (title, assignees, status, etc.).
   - **Pagination Controls**: Buttons for navigating between pages of data.
   
+---
+
+## Future Work 🔮
+
+The following improvements and expansions are planned for future versions of **RepositoryAnalytics** to enhance its functionality and user experience:
+
+## Future Work 🔮
+
+To expand the functionality of **RepositoryAnalytics** and enable a panoramic view of all repositories, the following improvements should be made:
+
+1. **Panoramic Repository View**:
+   - Design and implement a panoramic interface displaying all repositories as 3D objects.
+   - Use visual markers or icons to represent repository details (e.g., name, activity level, number of open issues).
+   - Provide zoom and rotate controls to allow users to explore repositories in the 3D environment intuitively.
+
+2. **Repository Selection Mechanism**:
+   - Enable users to click or select a repository in the panoramic view to dive deeper into its details.
+   - Add hover tooltips displaying brief information about each repository (e.g., last update, default branch, primary language).
+
+3. **Enhanced Data Loading**:
+   - Fetch and display data for all repositories simultaneously while maintaining performance for large datasets.
+   - Implement caching to reduce redundant API calls and speed up navigation.
+
+4. **Interactive Repository Overview**:
+   - Provide an overview of repository statistics (e.g., stars, forks, contributors) in the panoramic view.
+   - Highlight repositories with the highest activity or recent updates for user attention.
+
+5. **Customizable Repository Filters**:
+   - Allow users to filter repositories based on criteria like activity level, programming language, or creation date.
+   - Add sorting options to organize repositories by relevance, name, or last activity.
+
+6. **Seamless Transition to Current Project View**:
+   - Once a user selects a repository, smoothly transition to the current detailed visualization of branches, issues, pull requests, and contributors.
+   - Retain a back button or breadcrumb navigation to return to the panoramic view.
+
+7. **Performance Optimization**:
+   - Ensure the panoramic view can handle hundreds of repositories without lag or performance issues.
+   - Use Level of Detail (LOD) techniques to manage rendering complexity for distant or inactive repositories.
+
+8. **Collaborative Features**:
+   - Add multi-user support to allow teams to explore and discuss repositories together in real time.
+   - Include annotations or notes that team members can attach to repositories for context.
+
+This enhanced functionality would provide users with a more comprehensive view of their repositories while maintaining the detailed insights already present in the project. It would elevate **RepositoryAnalytics** into a more versatile and engaging tool for managing GitHub repositories.
+
+
+These advancements aim to make **RepositoryAnalytics** a comprehensive tool for analyzing and visualizing GitHub repository data while adapting to user feedback and evolving needs.
+
 ---
 
 ## Additional Documentation 📚
